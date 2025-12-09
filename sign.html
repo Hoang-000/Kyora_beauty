@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyora Beauty — Trang Chủ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="Trangchu.css">
+  <link rel="stylesheet" href="sign.css">
+</head>
+
+<body>
+    <main>
+    <div class="container">
+          <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#"><img src="Ảnh/Logokyora.png" class="logo"></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#products">Sản phẩm</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="openSearch">🔍</button>
+        <button class="icon-btn">👤</button>
+        <button class="icon-btn">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH BAR POPUP -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+        <button class="close-search" id="closeSearch">✕</button>
+    </div>
+</div>
+
+<!-- SEARCH RESULTS -->
+<section id="searchResults" class="search-results" style="display:none;">
+    <div class="container">
+        <h2>Kết quả tìm kiếm</h2>
+        <div class="results-grid" id="resultsGrid"></div>
+    </div>
+</section>
+<section>
+
+    <!-- -------- FORM ĐĂNG KÝ -------- -->
+    <form id="registerForm" class="form-box">
+        <h2>Đăng ký tài khoản</h2>
+
+        <label>Họ và tên *</label>
+        <input type="text" placeholder="Tên" required>
+
+        <label>Số điện thoại *</label>
+        <input type="tel" placeholder="Số điện thoại" required>
+
+        <label>Email *</label>
+        <input type="email" placeholder="Email" required>
+
+        <label>Mật khẩu *</label>
+        <input type="password" placeholder="Mật khẩu" required>
+
+        <button type="submit" class="btn">ĐĂNG KÝ</button>
+
+        <div class="note">Hoặc đăng nhập bằng</div>
+
+        <div class="social-box">
+            <button type="button" class="fb">Facebook</button>
+            <button type="button" class="gg">Google</button>
+        </div>
+
+        <p class="switch">Bạn đã có tài khoản? 
+            <span onclick="showLogin()">Đăng nhập</span>
+        </p>
+    </form>
+
+
+    <!-- -------- FORM ĐĂNG NHẬP -------- -->
+    <form id="loginForm" class="form-box hidden">
+        <h2>Đăng nhập</h2>
+
+        <label>Email *</label>
+        <input type="email" placeholder="Email" required>
+
+        <label>Mật khẩu *</label>
+        <input type="password" placeholder="Mật khẩu" required>
+
+        <button type="submit" class="btn">ĐĂNG NHẬP</button>
+
+        <div class="note">Hoặc đăng nhập bằng</div>
+
+        <div class="social-box">
+            <button type="button" class="fb">Facebook</button>
+            <button type="button" class="gg">Google</button>
+        </div>
+
+        <p class="switch">Bạn chưa có tài khoản?
+            <span onclick="showRegister()">Đăng ký</span>
+        </p>
+    </form>
+</section>
+</div>
+</main>
+
+
+<footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col"><img src="Ảnh/Logokyora.png" class="footer-logo"><p>Kyora Beauty</p></div>
+      <div class="footer-col"><h4>Hỗ trợ</h4><p>Đổi trả</p><p>Bảo mật</p><p>Hướng dẫn mua hàng</p></div>
+      <div class="footer-col"><h4>Liên hệ</h4><p>46 Nguyễn Ngọc Nại</p><p>kyora@gmail.com</p></div>
+      <div class="footer-col"><h4>Giờ mở cửa</h4><p>8:00 — 21:00</p><p>Hotline: 039687799</p></div>
+    </div>
+    <p class="copyright">© 2025 Kyora — All rights reserved</p>
+  </footer>
+
+  <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="products.js"></script>
+    <script src="slider.js"></script>
+    <script src="sign.js"></script>
+</body>
+</html>
