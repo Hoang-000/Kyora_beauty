@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chi tiết Sản phẩm — Kyora Beauty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Trangchu.css">
+    <link rel="stylesheet" href="Trang_chi_tiết_sản_phẩm.css">
+</head>
+<body>
+
+    <header class="site-header" id="mainHeader">
+        <div class="container header-inner">
+            <a href="../Trangchu.html"><img src="../Ảnh/Logokyora.png" class="logo"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../Trangchu.html">Trang chủ</a></li>
+                    <li><a href="../Trang_giới_thiệu.html">Giới thiệu</a></li>
+                    <li><a href="Trang_sản_phẩm.html">Sản phẩm</a></li>
+                    <li><a href="../Blog.html">Blog</a></li>
+                    <li><a href="../Trang_liên_hệ.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="openSearch">🔍</button>
+                <button class="icon-btn">👤</button>
+                <button class="icon-btn">🛒</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container product-detail-page">
+            
+            <p id="loading-message">Đang tải chi tiết sản phẩm...</p>
+            <p id="not-found-message" style="display:none;">Không tìm thấy sản phẩm này. Vui lòng kiểm tra lại đường dẫn.</p>
+            
+            <div id="product-detail-container" style="display: none;">
+                
+                <section class="product-main-info">
+                    <div class="image-gallery">
+                        <img id="main-image" src="" alt="Ảnh sản phẩm chính">
+                        </div>
+                    
+                    <div class="product-summary">
+                        <p class="brand-name" id="brandName"></p>
+                        <h1 id="productName"></h1>
+                        <div class="rating">⭐️⭐️⭐️⭐️⭐️(2500 đánh giá)</div>
+                        <p class="price" id="price"></p>
+                        
+                        <div class="quantity-selector">
+                            <label for="quantity">Số lượng:</label>
+                            <input type="number" id="quantity" value="1" min="1">
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-buy">MUA NGAY</button>
+                            <button class="btn-add-cart">🛒 THÊM VÀO GIỎ</button>
+                        </div>
+                        
+                        <p class="short-description" id="shortDescription"></p>
+
+                        <div class="policy-highlights">
+                            <span>✅ Cam kết chính hãng </span>
+                            <span>🚚 Miễn phí giao hàng</span>
+                            <span>🔄 Đổi trả dễ dàng</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="product-details-stacked">
+                    
+                    <div class="detail-block">
+                        <h2 class="detail-title" data-toggle="description" data-content-id="descriptionContent">
+                            Mô tả sản phẩm <span class="toggle-icon">▼</span>
+                        </h2>
+                        <div id="descriptionContent" class="detail-body is-open"></div>
+                    </div>
+                    
+                    <div class="detail-block">
+                        <h2 class="detail-title" data-toggle="uses" data-content-id="usesContent">
+                            Công dụng <span class="toggle-icon">▼</span>
+                        </h2>
+                        <div id="usesContent" class="detail-body"></div>
+                    </div>
+
+                    <div class="detail-block">
+                        <h2 class="detail-title" data-toggle="howToUse" data-content-id="howToUseContent">
+                            Cách sử dụng <span class="toggle-icon">▼</span>
+                        </h2>
+                        <div id="howToUseContent" class="detail-body"></div>
+                    </div>
+                    
+                    <div class="detail-block ingredient-block">
+                        <h2 class="detail-title" data-toggle="ingredients" data-content-id="ingredientsContent">
+                            Thành phần <span class="toggle-icon">▼</span>
+                        </h2>
+                        <div id="ingredientsContent" class="detail-body"></div>
+                    </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col"><img src="../Ảnh/Logokyora.png" class="footer-logo"><p>Kyora Beauty</p></div>
+            <div class="footer-col"><h4>Hỗ trợ</h4><p>Đổi trả</p><p>Bảo mật</p><p>Hướng dẫn mua hàng</p></div>
+            <div class="footer-col"><h4>Liên hệ</h4><p>46 Nguyễn Ngọc Nại</p><p>kyora@gmail.com</p></div>
+            <div class="footer-col"><h4>Giờ mở cửa</h4><p>8:00 — 21:00</p><p>Hotline: 039687799</p></div>
+        </div>
+    </footer>
+
+    <script src="../products.js"></script> 
+    <script src="../slider.js"></script>
+    <script src="Trang_chi_tiết_sản_phẩm.js"></script>
+</body>
+</html>

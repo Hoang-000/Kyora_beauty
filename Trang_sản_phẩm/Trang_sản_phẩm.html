@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kyora Beauty — Sản phẩm</title>
+    <link rel="stylesheet" href="../Trangchu.css">
+    <link rel="stylesheet" href="Trang_sản_phẩm.css">
+</head>
+<body>
+
+    <header class="site-header" id="mainHeader">
+        <div class="container header-inner">
+            <a href="../Trangchu.html"><img src="../Ảnh/Logokyora.png" class="logo"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../Trangchu.html">Trang chủ</a></li>
+                    <li><a href="../Trang_giới_thiệu.html">Giới thiệu</a></li>
+                    <li><a href="../Trang_sản_phẩm.html">Sản phẩm</a></li>
+                    <li><a href="../Blog.html">Blog</a></li>
+                    <li><a href="../Trang_liên_hệ.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="openSearch">🔍</button>
+                <button class="icon-btn">👤</button>
+                <button class="icon-btn">🛒</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+            <button class="close-search" id="closeSearch">✕</button>
+        </div>
+    </div>
+
+    <section id="searchResults" class="search-results" style="display:none;">
+        <div class="container">
+            <h2>Kết quả tìm kiếm</h2>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+    </section>
+
+    <section class="product-banner-section">
+         <img src="../Ảnh/Product_Banner.jpg" alt="Tất cả sản phẩm" class="product-banner-image">
+    </section>
+    <main class="container product-page">
+        <aside class="sidebar">
+                
+                <div class="filter-group search-local-group">
+                    <h4>Tìm kiếm sản phẩm</h4>
+                    <input type="text" id="localSearchInput" placeholder="Nhập tên sản phẩm, thương hiệu...">
+                </div>
+                <h3>Danh mục</h3>
+                <ul class="category-list">
+                    <li><a href="#" data-category="all" class="active-category">Tất cả sản phẩm</a></li>
+                    <li><a href="#" data-category="face">Chăm sóc da mặt</a></li>
+                    <li><a href="#" data-category="body">Chăm sóc da body</a></li>
+                    <li><a href="#" data-category="makeup">Make up</a></li>
+                </ul>
+
+                <h3>Bộ lọc</h3>
+                <div class="filter-group">
+                    <h4>Thương hiệu</h4>
+                    <select id="brand-filter">
+                        <option value="all">Tất cả</option>
+                        <option value="cocoon">Cocoon</option>
+                        <option value="maybelline">Maybelline</option>
+                        <option value="larocheposay">La Roche-Posay</option>
+                        <option value="loreal">L'Oréal Paris</option>
+                    </select>
+                </div>
+            </aside>
+
+        <section class="product-list-section">
+            <div class="product-grid" id="productGrid">
+                <p id="no-products" style="display:none;">Không có sản phẩm nào trong danh mục này.</p>
+            </div>
+            <div class="pagination-controls" id="paginationControls">
+                </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col"><img src="../Ảnh/Logokyora.png" class="footer-logo"><p>Kyora Beauty</p></div>
+            <div class="footer-col"><h4>Hỗ trợ</h4><p>Đổi trả</p><p>Bảo mật</p><p>Hướng dẫn mua hàng</p></div>
+            <div class="footer-col"><h4>Liên hệ</h4><p>46 Nguyễn Ngọc Nại</p><p>kyora@gmail.com</p></div>
+            <div class="footer-col"><h4>Giờ mở cửa</h4><p>8:00 — 21:00</p><p>Hotline: 039687799</p></div>
+        </div>
+        <p class="copyright">© 2025 Kyora — All rights reserved</p>
+    </footer>
+
+    <script src="../products.js"></script>
+    <script src="../slider.js"></script> 
+    <script src="Trang_sản_phẩm.js"></script>
+</body>
+</html>
