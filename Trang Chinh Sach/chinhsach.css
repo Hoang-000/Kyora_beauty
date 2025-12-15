@@ -1,0 +1,187 @@
+/* ======================================= */
+/* 1. BIẾN MÀU & THIẾT LẬP GỐC */
+/* ======================================= */
+:root {
+    --primary-color: #f77f98;    /* Hồng chủ đạo */
+    --text-color: #495057;       /* Màu chữ chính */
+    --heading-color: #343a40;    /* Màu tiêu đề đậm */
+    --bg-color: #fcf6f9;         /* Nền pastel siêu nhẹ */
+    --white: #ffffff;
+    --border-color-light: #e0e0e0; 
+    --shadow-color: rgba(247, 127, 152, 0.15); 
+}
+
+body {
+    background-color: var(--bg-color); 
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.65; 
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================================= */
+/* 2. ĐỊNH DẠNG CHUNG CỦA TRANG CHÍNH SÁCH */
+/* ======================================= */
+
+.policy-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--white); 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px var(--shadow-color); 
+}
+
+.policy-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.last-updated {
+    text-align: center;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.policy-section h2 {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--heading-color);
+    border-left: 5px solid var(--primary-color); 
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.policy-section h3 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.note-important {
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    background-color: #fffafa; 
+    border-radius: 10px;
+    margin: 25px 0;
+    font-size: 0.95em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color-light);
+    margin: 40px 0;
+}
+
+/* ======================================= */
+/* 3. KHU VỰC LIÊN HỆ (CONTACT CARDS) */
+/* ======================================= */
+.contact-section {
+    max-width: 900px; 
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.contact-cards-container {
+    display: flex;
+    gap: 20px; 
+    justify-content: space-between;
+}
+
+.contact-link {
+    text-decoration: none; 
+    color: inherit; 
+    flex: 1; 
+    display: block; 
+}
+
+.contact-card {
+    background-color: var(--white);
+    padding: 30px 20px; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s; 
+    height: 100%; 
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.contact-link:hover .contact-card {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); 
+    border-color: var(--primary-color); 
+}
+
+.contact-icon {
+    font-size: 2em; 
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+}
+.card-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+.card-detail {
+    color: #888;
+    font-size: 0.95em;
+}
+
+/* ======================================= */
+/* 4. ĐỊNH DẠNG FORM CƠ BẢN (Cho contact-form.html) */
+/* ======================================= */
+
+.contact-page-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.submit-contact-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* ======================================= */
+/* 5. RESPONSIVE */
+/* ======================================= */
+@media (max-width: 768px) {
+    .policy-container, .contact-page-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .contact-cards-container {
+        flex-direction: column;
+    }
+    .contact-link {
+        margin-bottom: 15px; 
+    }
+}

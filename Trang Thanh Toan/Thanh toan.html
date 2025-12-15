@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYORA BEAUTY THANH TOAN</title>
+    <link rel="stylesheet" href="thanhtoan.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="checkout-wrapper">
+        <header class="checkout-header">
+            <h1>Thanh Toán Đơn Hàng</h1>
+            <p>Hoàn tất thông tin của bạn để đặt hàng</p>
+        </header>
+
+        <div class="checkout-container">
+            <div class="checkout-details card-section">
+                <section class="section-box">
+                    <h3 class="section-title"><i class="fas fa-shipping-fast icon-left"></i> Thông tin nhận hàng</h3>
+                    <form id="order-form">
+                        <div class="form-group required">
+                            <label for="full-name">Họ và tên</label>
+                            <input type="text" id="full-name" required placeholder="Nhập họ và tên của bạn">
+                        </div>
+                        <div class="form-group required">
+                            <label for="phone-number">Số điện thoại</label>
+                            <input type="tel" id="phone-number" required placeholder="VD: 0987xxxxxx">
+                        </div>
+                        
+                        <div class="form-group required">
+                            <label for="province">Tỉnh thành</label>
+                            <select id="province" required>
+                                <option value="">Chọn Tỉnh / Thành phố</option>
+                                <option value="HN">Hà Nội</option>
+                                <option value="HCM">TP. Hồ Chí Minh</option>
+                                <option value="BG">Bắc Giang</option>
+                                <option value="HY">Hưng Yên</option>
+                                <option value="TN">Thái Nguyên</option>
+                                <option value="NB">Ninh Bình</option>
+                                <option value="PT">Phú Thọ</option>
+                                <option value="VP">Vĩnh Phúc</option>
+                                <option value="CT">Cần Thơ</option>
+                                <option value="DN">Đồng Nai</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group required">
+                            <label for="district">Quận huyện</label>
+                            <input type="text" id="district" required placeholder="Nhập Quận / Huyện">
+                        </div>
+                        
+                        <div class="form-group required">
+                            <label for="ward">Phường xã</label>
+                            <input type="text" id="ward" required placeholder="Nhập Phường / Xã">
+                        </div>
+                        
+                        <div class="form-group required">
+                            <label for="address-detail">Địa chỉ chi tiết</label>
+                            <input type="text" id="address-detail" required placeholder="Số nhà, tên đường, tên tòa nhà...">
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Ghi chú (Tùy chọn)</label>
+                            <textarea id="note" placeholder="Ví dụ: Giao hàng vào buổi chiều"></textarea>
+                        </div>
+                        
+                        
+                    </form>
+                </section>
+                
+                <section class="section-box payment-section card-section">
+                    <h3 class="section-title"><i class="fas fa-wallet icon-left"></i> Vận chuyển & Thanh toán</h3>
+                    <h4 class="payment-subtitle">Hình thức thanh toán</h4>
+                    <div class="payment-options-grid">
+                        <div class="payment-option"><input type="radio" id="payment-cod" name="payment-method" value="COD" checked><label for="payment-cod"><i class="fas fa-handshake"></i> Thanh toán khi nhận hàng (COD)</label></div>
+                        
+                        <div class="payment-option"><input type="radio" id="payment-transfer" name="payment-method" value="TRANSFER"><label for="payment-transfer"><i class="fas fa-university"></i> Thanh toán chuyển khoản</label></div>
+                    </div>
+                    
+                    <div id="transfer-info" class="transfer-details">
+                        <p class="note-transfer"><i class="fas fa-exclamation-circle"></i> LƯU Ý: Vui lòng ghi "ĐÃ CK" kèm SĐT vào ghi chú chuyển khoản.</p>
+                        <div class="bank-info">
+                            <p>Ngân hàng: Techcombank</p>
+                            <p>Số tài khoản: 12345678901</p>
+                            <p>Tên tài khoản: Shop Mỹ Phẩm </p>
+                        </div>
+                        <h5 class="qr-title">Quét mã QR để thanh toán</h5>
+                        <div class="qr-code-area">
+                            <p class="qr-text">Shop Mỹ Phẩm<br>12345678901</p>
+                            <img src="images/maqr.png" alt="QR Code Thanh Toán">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="checkout-summary card-section">
+                <section class="section-box">
+                    <h3 class="section-title"><i class="fas fa-shopping-bag icon-left"></i> Đơn hàng của bạn</h3>
+                    
+                    <div id="product-list" class="product-list-scroller">
+                        </div>
+                    
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-line"><span>Tạm tính:</span><span id="subtotal">0đ</span></div>
+                    <div class="summary-line"><span>Phí vận chuyển:</span><span id="shipping-fee">0 đ</span></div>
+
+                    <div class="discount-input-group">
+                        <input type="text" id="coupon-code" placeholder="Mã giảm giá">
+                        <button type="button" id="apply-coupon" class="btn-check-coupon">Áp dụng</button>
+                    </div>
+                    
+                    <div class="promo-options">
+                        <h5 class="promo-title">Chọn mã giảm giá khác <i class="fas fa-tags"></i></h5>
+                        <div class="promo-checks">
+                            <div class="promo-item"><input type="checkbox" id="promo-75" data-discount="75000"><label for="promo-75">Giảm 75.000đ</label></div>
+                            <div class="promo-item"><input type="checkbox" id="promo-65" data-discount="65000"><label for="promo-65">Giảm 65.000đ</label></div>
+                            <div class="promo-item"><input type="checkbox" id="promo-35" data-discount="35000"><label for="promo-35">Giảm 35.000đ</label></div>
+                            <div class="promo-item"><input type="checkbox" id="promo-25" data-discount="25000"><label for="promo-25">Giảm 25.000đ</label></div>
+                        </div>
+                        <div class="summary-line discount-applied-line">
+                            <span>Giảm giá:</span>
+                            <span id="total-discount">-0 đ</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span>TỔNG CỘNG</span>
+                        <span id="final-total" data-total="0">0đ</span>
+                    </div>
+                    
+                    <button type="submit" class="place-order-btn">HOÀN TẤT ĐẶT HÀNG</button>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script src="thanhtoan.js"></script>
+    <div id="custom-alert-modal" class="custom-alert-modal">
+    <div class="modal-content">
+        <i class="fas fa-exclamation-triangle alert-icon"></i>
+        <p id="alert-message">Vui lòng điền đầy đủ các thông tin bắt buộc (*) để hoàn tất đơn hàng.</p>
+        <button id="close-alert-btn">Đã hiểu</button>
+    </div>
+</div>
+<div id="success-modal" class="custom-alert-modal">
+    <div class="modal-content success-content">
+        <i class="fas fa-check-circle success-icon"></i>
+        <p id="success-message">Cảm ơn bạn! Đơn hàng của bạn đã được đặt thành công.</p>
+        <p class="order-id-display">Mã đơn hàng: #<span>123456</span></p>
+        <button id="close-success-btn">Tiếp tục mua sắm</button>
+    </div>
+</div>
+</body>
+</html>
