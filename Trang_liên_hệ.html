@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liên hệ — Kyora Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Trangchu.css">
+    <style>
+        /* GIỮ NGUYÊN CSS GỐC CỦA BẠN */
+        :root { --glass-bg: rgba(255, 255, 255, 0.7); }
+        .contact-page { background: linear-gradient(180deg, #fff 0%, var(--pink-50) 100%); padding-bottom: 80px; }
+        .contact-hero { height: 300px; background: linear-gradient(rgba(196, 106, 116, 0.1), rgba(196, 106, 116, 0.2)), url('https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?auto=format&fit=crop&q=80&w=1500'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--accent-dark); margin-bottom: 20px;  }
+        .contact-hero h1 { font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .map-wrapper { 
+            margin-bottom: 50px; 
+            overflow: hidden; 
+            border: 8px solid white; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05); 
+        }
+
+        .contact-wrapper { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 0; background: var(--glass-bg); backdrop-filter: blur(15px); border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(155, 67, 80, 0.1); border: 1px solid rgba(253, 230, 236, 0.5); }
+        .contact-info-panel { background: var(--accent); color: white; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .contact-info-panel h2 { margin-bottom: 30px; font-size: 24px; }
+        .info-item-modern { display: flex; align-items: center; margin-bottom: 30px; gap: 20px; }
+        .info-item-modern .icon-circle { width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; transition: 0.3s; }
+        .info-item-modern:hover .icon-circle { background: white; color: var(--accent); transform: scale(1.1); }
+        .contact-form-panel { padding: 50px; background: white; }
+        .form-title { color: var(--accent-dark); margin-bottom: 30px; font-size: 26px; }
+        .modern-input-group { position: relative; margin-bottom: 30px; }
+        .modern-input-group input, .modern-input-group textarea { width: 100%; padding: 12px 0; border: none; border-bottom: 2px solid var(--pink-100); outline: none; font-size: 16px; transition: 0.3s; background: transparent; }
+        .modern-input-group label { position: absolute; top: 12px; left: 0; color: #999; pointer-events: none; transition: 0.3s; }
+        .modern-input-group input:focus ~ label, .modern-input-group input:valid ~ label, .modern-input-group textarea:focus ~ label, .modern-input-group textarea:valid ~ label { top: -15px; font-size: 13px; color: var(--accent); font-weight: 700; }
+        .modern-input-group input:focus, .modern-input-group textarea:focus { border-bottom-color: var(--accent); }
+        .btn-modern-send { background: var(--accent); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(196, 106, 116, 0.3); }
+        .btn-modern-send:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(155, 67, 80, 0.4); }
+/* Container - Cụm nút liên hệ */
+.kyora-contact-group {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+/* Base style cho từng nút */
+.contact-item {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: #0068ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: kyora-shake 2s infinite ease-in-out;
+    overflow: hidden;
+}
+
+.mess-item .icon-box { background: #0084ff; }
+.zalo-item .icon-box { background: transparent; } 
+
+/* Định dạng cho ảnh zalo.png */
+.icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Định dạng cho Messenger SVG */
+.icon-box svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hiệu ứng tỏa sóng Sonar */
+.sonar-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    background: #0068ff;
+    opacity: 0.4;
+    animation: kyora-sonar 2s infinite;
+}
+.mess-item .sonar-wave { background: #0084ff; }
+.zalo-item .sonar-wave { background: #0068ff; } 
+
+
+/* Rung rinh mượt mà */
+@keyframes kyora-shake {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    5%, 15%, 25% { transform: rotate(-12deg) scale(1.05); }
+    10%, 20%, 30% { transform: rotate(12deg) scale(1.05); }
+    35% { transform: rotate(0deg) scale(1.05); }
+}
+
+/* Tỏa sóng mượt mà */
+@keyframes kyora-sonar {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Hover: Phóng to và dừng rung */
+.contact-item:hover .icon-box {
+    transform: scale(1.15);
+    animation-play-state: paused;
+}
+        @media (max-width: 992px) { .contact-wrapper { grid-template-columns: 1fr; } .contact-info-panel { padding: 40px 30px; } }
+    </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="Trangchu.html"><img src="Ảnh/Logokyora.png" class="logo"></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="Trangchu.html">Trang chủ</a></li>
+          <li><a href="Trang_sản_phẩm/Trang_sản_phẩm.html">Sản phẩm</a></li>
+          <li><a href="Trang_Blog.html">Blog</a></li>
+          <li><a href="Trang_liên_hệ.html" style="color: var(--accent);">Liên hệ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">👤</button>
+        <button class="icon-btn">🛒</button>
+      </div>
+    </div>
+  </header>
+    <div class="container">
+        <div class="map-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5885237894935!2d105.8209849750308!3d21.009121980635467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac83eb6d8881%3A0x6b90740a6b7264a8!2zNDYgTmd1eeG7hW4gTmdvYyBO4bqhaSwgS2jGsMahbmcgTWFpLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaeG7hXQgTmFt!5e0!3m2!1svi!2s!4v1715800000000!5m2!1vi!2s" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="contact-wrapper" data-aos="fade-up">
+            <div class="contact-info-panel">
+                <h2>Thông tin liên hệ</h2>
+                <div class="info-item-modern">
+                    <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <p style="opacity: 0.8; font-size: 14px;">Địa chỉ shop</p>
+                        <p>46 Nguyễn Ngọc Nại, Thanh Xuân, HN</p>
+                    </div>
+                </div>
+                <div class="info-item-modern">
+                    <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <p style="opacity: 0.8; font-size: 14px;">Hotline hỗ trợ</p>
+                        <p>0396 877 999</p>
+                    </div>
+                </div>
+                <div class="info-item-modern">
+                    <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <p style="opacity: 0.8; font-size: 14px;">Email báo giá</p>
+                        <p>kyora@gmail.com</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <p style="margin-bottom: 15px;">Mạng xã hội:</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://facebook.com/kyora" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-panel">
+                <h2 class="form-title">Liên hệ với chúng tôi</h2>
+                <form id="kyoraContactForm">
+                    <div class="modern-input-group">
+                        <input type="text" id="name" required>
+                        <label>Tên của bạn</label>
+                    </div>
+                    <div class="modern-input-group">
+                        <input type="email" id="email" required>
+                        <label>Địa chỉ Email</label>
+                    </div>
+                    <div class="modern-input-group">
+                        <textarea id="message" rows="4" required></textarea>
+                        <label>Chúng tôi có thể giúp gì cho bạn?</label>
+                    </div>
+                    <button type="submit" class="btn-modern-send">
+                        <span>Gửi tin nhắn</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <img src="Ảnh/Logokyora.png" class="footer-logo">
+        <p>Kyora Beauty</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <p>Chính sách đổi trả</p>
+        <p>Chính sách bảo mật</p>
+        <p>Hướng dẫn mua hàng</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <p>46 Nguyễn Ngọc Nại, Hà Nội</p>
+        <p>0396 877 999</p>
+        <p>kyora@gmail.com</p>
+      </div>
+    </div>
+    <div class="container" style="text-align: center; padding: 20px 0; border-top: 1px solid #fde6ec; margin-top: 30px;">
+        <p>© 2025 Kyora Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+<div class="kyora-contact-group">
+    <a href="https://m.me/YOUR_PAGE_ID" target="_blank" class="contact-item mess-item" title="Chat Messenger">
+        <div class="sonar-wave"></div>
+        <div class="icon-box">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 6.145 2 11.258c0 3.167 1.827 5.945 4.64 7.569V22l3.015-1.646c.752.21 1.537.323 2.345.323 5.523 0 10-4.145 10-9.258C22 6.306 17.523 2.161 12 2.161z" fill="#fff"/>
+                <path d="M13.065 14.355l-2.613-2.807-5.097 2.807 5.58-5.903 2.613 2.807 5.097-2.807-5.58 5.903z" fill="#0084FF"/>
+            </svg>
+        </div>
+    </a>
+
+    <a href="https://zalo.me/0396877999" target="_blank" class="contact-item zalo-item" title="Chat Zalo">
+        <div class="sonar-wave"></div>
+        <div class="icon-box">
+            <img src="Ảnh/zalo.png" alt="Zalo Chat">
+        </div>
+    </a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    document.getElementById('kyoraContactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        btn.innerHTML = '<span>Đang gửi...</span>';
+        setTimeout(() => {
+            alert('Cảm ơn bạn! Kyora đã nhận được thông tin và sẽ phản hồi sớm.');
+            this.reset();
+            btn.innerHTML = '<span>Gửi tin nhắn</span> <i class="fas fa-paper-plane"></i>';
+        }, 1500);
+    });
+</script>
+</body>
+</html>
