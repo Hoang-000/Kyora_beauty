@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Beauty Blog - Kyora</title>
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<div class="blog-wrapper">
+
+  <!-- MAIN CONTENT -->
+  <main class="blog-main" id="blogList"></main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-box">
+      <h3>Danh mục</h3>
+      <ul>
+        <li onclick="filterCategory('Skincare')">Skincare</li>
+        <li onclick="filterCategory('Makeup')">Makeup</li>
+        <li onclick="filterCategory('Routine')">Routine</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-box">
+      <h3>Bài nổi bật</h3>
+      <div class="mini-feature" onclick="openPost(0)">
+        <img src="Ảnh/danhaycam.png">
+        <div>
+          <h4>Routine chăm sóc da buổi tối cho da nhạy cảm</h4>
+          <p>Làn da trở nên mềm mại hơn</p>
+        </div>
+      </div>
+      <div class="mini-feature" onclick="openPost(3)">
+        <img src="Ảnh/routine.png">
+        <div>
+          <h4>Routine sáng tối giản cho da dầu</h4>
+          <p>Đơn giản – hiệu quả</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <h3>🔥 Chủ đề hot</h3>
+      <div class="tag-cloud">
+        <span onclick="filterCategory('Skincare')">Da nhạy cảm</span>
+        <span onclick="filterCategory('Makeup')">Son nude</span>
+        <span onclick="filterCategory('Routine')">Routine tối</span>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <h3>👀 Bạn vừa xem</h3>
+      <ul id="recentView"></ul>
+    </div>
+
+    <div class="sidebar-quote">
+      “Làn da đẹp là kết quả của sự kiên nhẫn mỗi ngày.”
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="post-modal" id="postModal">
+  <div class="post-content">
+    <span class="close" onclick="closePost()">✕</span>
+    <div id="postDetail"></div>
+  </div>
+</div>
+
+<script src="blog.js"></script>
+</body>
+</html>
