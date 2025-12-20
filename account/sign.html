@@ -1,133 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kyora Beauty — tài khoản</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài khoản - Kyora Beauty</title>
   <link rel="stylesheet" href="/assets/css/Trangchu.css">
   <link rel="stylesheet" href="/assets/css/sign.css">
 </head>
 
 <body>
-  <main>
-    <div id="header-placeholder"></div>
-    <script>
-      fetch("/components/header.html")
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("header-placeholder").innerHTML = html;
-        });
-    </script>
 
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        // Re-attach search events
+        const openSearch = document.getElementById('openSearch');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchOverlay = document.getElementById('searchOverlay');
+        if (openSearch && searchOverlay) openSearch.addEventListener('click', () => searchOverlay.style.display = 'flex');
+        if (closeSearch && searchOverlay) closeSearch.addEventListener('click', () => searchOverlay.style.display = 'none');
+      });
+  </script>
 
-    <!-- SEARCH BAR POPUP -->
-    <div class="search-overlay" id="searchOverlay">
-      <div class="search-box">
-        <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
-        <button class="close-search" id="closeSearch">✕</button>
+  <main class="container account-page">
+
+    <!-- 1. KHU VỰC ĐĂNG NHẬP / ĐĂNG KÝ (Hiện khi chưa đăng nhập) -->
+    <div id="auth-section" class="auth-container">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">Đăng nhập</button>
+        <button class="auth-tab" onclick="switchTab('register')">Đăng ký</button>
       </div>
-    </div>
 
-    <!-- SEARCH RESULTS -->
-    <section id="searchResults" class="search-results" style="display:none;">
-      <div class="container">
-        <h2>Kết quả tìm kiếm</h2>
-        <div class="results-grid" id="resultsGrid"></div>
-      </div>
-    </section>
-    <section class="auth-section">
-
-      <!-- -------- FORM ĐĂNG KÝ -------- -->
-      <form id="registerForm" class="form-box">
-        <h2>Đăng ký tài khoản</h2>
-
-        <label>Họ và tên *</label>
-        <input type="text" placeholder="Tên" required>
-
-        <label>Số điện thoại *</label>
-        <input type="tel" placeholder="Số điện thoại" required>
-
-        <label>Email *</label>
-        <input type="email" placeholder="Email" required>
-
-        <label>Mật khẩu *</label>
-        <input type="password" placeholder="Mật khẩu" required>
-
-        <button type="submit" class="btn">ĐĂNG KÝ</button>
-
-        <div class="note">Hoặc đăng nhập bằng</div>
-
-        <div class="social-box">
-          <button type="button" class="fb">Facebook</button>
-          <button type="button" class="gg">Google</button>
+      <!-- Form Đăng nhập -->
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" id="login-email" required placeholder="Nhập email của bạn">
         </div>
-
-        <p class="switch">Bạn đã có tài khoản?
-          <span onclick="showLogin()">Đăng nhập</span>
-        </p>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="login-password" required placeholder="Nhập mật khẩu">
+        </div>
+        <p id="login-error" class="error-msg"></p>
+        <button type="submit" class="btn-submit">Đăng nhập</button>
       </form>
 
-
-      <!-- -------- FORM ĐĂNG NHẬP -------- -->
-      <form id="loginForm" class="form-box hidden">
-        <h2>Đăng nhập</h2>
-
-        <label>Email *</label>
-        <input type="email" placeholder="Email" required>
-
-        <label>Mật khẩu *</label>
-        <input type="password" placeholder="Mật khẩu" required>
-
-        <button type="submit" class="btn">ĐĂNG NHẬP</button>
-
-        <div class="note">Hoặc đăng nhập bằng</div>
-
-        <div class="social-box">
-          <button type="button" class="fb">Facebook</button>
-          <button type="button" class="gg">Google</button>
+      <!-- Form Đăng ký -->
+      <form id="register-form" class="hidden" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" id="reg-name" required placeholder="Nhập họ tên đầy đủ">
         </div>
-
-        <p class="switch">Bạn chưa có tài khoản?
-          <span onclick="showRegister()">Đăng ký</span>
-        </p>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="reg-email" required placeholder="Nhập email">
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="reg-password" required placeholder="Tạo mật khẩu">
+        </div>
+        <p id="reg-error" class="error-msg"></p>
+        <button type="submit" class="btn-submit">Đăng ký tài khoản</button>
       </form>
-    </section>
     </div>
+
+    <!-- 2. KHU VỰC THÔNG TIN CÁ NHÂN (Hiện khi ĐÃ đăng nhập) -->
+    <div id="profile-section" class="profile-container hidden">
+      <h2 class="form-title">Thông tin cá nhân</h2>
+      <form id="profileForm" onsubmit="handleUpdateProfile(event)">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" id="fullname" required>
+        </div>
+        <div class="form-group">
+          <label>Email (Không thể đổi)</label>
+          <input type="email" id="email" disabled style="background: #f5f5f5; color: #888;">
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="tel" id="phone" placeholder="Thêm số điện thoại">
+        </div>
+        <div class="form-group">
+          <label>Giới tính</label>
+          <select id="gender">
+            <option value="">--Chọn--</option>
+            <option value="female">Nữ</option>
+            <option value="male">Nam</option>
+            <option value="other">Khác</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ngày sinh</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+          <label>Tỉnh thành</label>
+          <select id="province">
+            <option value="">Chọn Tỉnh / Thành phố</option>
+            <option value="HN">Hà Nội</option>
+            <option value="HCM">TP. Hồ Chí Minh</option>
+            <option value="BG">Bắc Giang</option>
+            <option value="HY">Hưng Yên</option>
+            <option value="TN">Thái Nguyên</option>
+            <option value="NB">Ninh Bình</option>
+            <option value="PT">Phú Thọ</option>
+            <option value="VP">Vĩnh Phúc</option>
+            <option value="CT">Cần Thơ</option>
+            <option value="DN">Đồng Nai</option>
+          </select>
+        </div>
+        <div class="form-group" style="display: flex; gap: 10px;">
+          <div style="flex: 1;"><label>Quận huyện</label><input type="text" id="district" placeholder="Quận / Huyện">
+          </div>
+          <div style="flex: 1;"><label>Phường xã</label><input type="text" id="ward" placeholder="Phường / Xã"></div>
+        </div>
+        <div class="form-group">
+          <label>Địa chỉ chi tiết</label>
+          <input type="text" id="address-detail" placeholder="Số nhà, tên đường...">
+        </div>
+        <div class="btn-row">
+          <button type="submit" class="btn-submit">Cập nhật</button>
+          <button type="button" onclick="handleLogout()" class="btn-submit btn-logout">Đăng xuất</button>
+        </div>
+      </form>
+    </div>
+
   </main>
 
-
-  <footer id="contact" class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col"><img src="assets/images/Logokyora.png" class="footer-logo">
-        <p>Kyora Beauty</p>
-      </div>
-      <div class="footer-col">
-        <h4>Hỗ trợ</h4>
-        <p>Đổi trả</p>
-        <p>Bảo mật</p>
-        <p>Hướng dẫn mua hàng</p>
-      </div>
-      <div class="footer-col">
-        <h4>Liên hệ</h4>
-        <p>46 Nguyễn Ngọc Nại</p>
-        <p>kyora@gmail.com</p>
-      </div>
-      <div class="footer-col">
-        <h4>Giờ mở cửa</h4>
-        <p>8:00 — 21:00</p>
-        <p>Hotline: 039687799</p>
-      </div>
-    </div>
-    <p class="copyright">© 2025 Kyora — All rights reserved</p>
-  </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/assets/json/products.js"></script>
-  <script src="/assets/json/slider.js"></script>
+  <!-- Script xử lý -->
   <script src="/assets/json/sign.js"></script>
+
 </body>
 
 </html>

@@ -1,97 +1,122 @@
-body {
-    background: #f5f5f5;
-}
-
-.form-box {
-    background: #fff;
-    padding: 25px;
-    border-left: 5px solid #c62828;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 420px;
-}
-
-.form-box h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.btn {
-    width: 100%;
-    background: #c62828;
-    color: #fff;
-    padding: 12px;
-    font-size: 16px;
-    margin-top: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.note {
-    text-align: center;
-    color: #777;
-    margin: 20px 0 10px;
-}
-
-.social-box {
+.account-page {
+    padding: 60px 0;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
+    background: #fff;
+}
+
+.auth-container,
+.profile-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--pink-100);
+}
+
+/* Tabs chuyển đổi Login/Register */
+.auth-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.auth-tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--muted);
+    transition: 0.3s;
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+.auth-tab.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--accent-dark);
+}
+
+.btn-row {
+    display: flex;
     gap: 10px;
 }
 
-.fb,
-.gg {
-    flex: 1;
-    padding: 8px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
+.btn-logout {
+    background: #999;
 }
 
-.fb {
-    background: #3b5998;
-}
-
-.gg {
-    background: #db4437;
-}
-
-.switch {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.switch span {
-    color: #c62828;
-    cursor: pointer;
-    font-weight: bold;
+.btn-logout:hover {
+    background: #777;
 }
 
 .hidden {
     display: none;
 }
 
-.auth-section {
-    min-height: calc(100vh - 120px);
-    /* trừ chiều cao header */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    background: #fff5f6;
+.error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+h2.form-title {
+    text-align: center;
+    color: var(--accent-dark);
+    margin-bottom: 25px;
+    font-size: 24px;
+    margin-top: 0;
 }

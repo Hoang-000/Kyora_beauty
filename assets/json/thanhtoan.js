@@ -40,6 +40,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const placeOrderBtn = document.querySelector('.place-order-btn');
     const currentCart = getCart();
 
+    // --- TỰ ĐỘNG ĐIỀN THÔNG TIN KHÁCH HÀNG (Nếu đã đăng nhập) ---
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        const autoFillMap = {
+            'full-name': currentUser.name,
+            'phone-number': currentUser.phone,
+            'province': currentUser.province,
+            'district': currentUser.district,
+            'ward': currentUser.ward,
+            'address-detail': currentUser.address
+        };
+        for (const [id, value] of Object.entries(autoFillMap)) {
+            const el = document.getElementById(id);
+            if (el && value) el.value = value;
+        }
+    }
+
     // Phần địa chỉ (đã lược bỏ)
 
     // Phần tóm tắt đơn hàng
@@ -229,4 +246,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Khởi tạo tính toán tổng tiền khi tải trang (TỰ ĐỘNG)
     calculateTotal();
     document.getElementById('payment-cod').checked = true;
+    // Đảm bảo ẩn thông tin chuyển khoản khi mới vào trang (vì mặc định là COD)
+    transferInfo.style.display = 'none';
 });
