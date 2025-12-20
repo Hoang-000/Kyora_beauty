@@ -3,19 +3,19 @@ const products = [
         id: 1,
         name: "Serum Dưỡng Ẩm Kyora",
         price: "320.000₫",
-        image: "/images/new1.jpg"
+        image: "/assets/images/new1.png"
     },
     {
         id: 2,
         name: "Sữa Rửa Mặt Thiên Nhiên",
         price: "185.000₫",
-        image: "/images/new2.jpg"
+        image: "/assets/images/new2.jpg"
     },
     {
         id: 3,
         name: "Toner Hoa Hồng",
         price: "210.000₫",
-        image: "/images/new3.jpg"
+        image: "/assets/images/new3.jpg"
     },
     {
         id: 4,

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Beauty Blog - Kyora</title>
+  <link rel="stylesheet" href="/assets/css/blog.css">
+  <link rel="stylesheet" href="/assets/css/Trangchu.css">
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+        const openSearch = document.getElementById('openSearch');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchOverlay = document.getElementById('searchOverlay');
+        if (openSearch && searchOverlay) {
+          openSearch.addEventListener('click', () => {
+            searchOverlay.style.display = 'flex'; // Hiển thị popup tìm kiếm
+          });
+        }
+        if (closeSearch && searchOverlay) {
+          closeSearch.addEventListener('click', () => {
+            searchOverlay.style.display = 'none'; // Đóng popup tìm kiếm
+          });
+        }
+      });
+  </script>
+  <div class="blog-wrapper">
+
+    <!-- MAIN CONTENT -->
+    <main class="blog-main" id="blogList"></main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-box">
+        <h3>Danh mục</h3>
+        <ul>
+          <li onclick="filterCategory('Skincare')">Skincare</li>
+          <li onclick="filterCategory('Makeup')">Makeup</li>
+          <li onclick="filterCategory('Routine')">Routine</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>Bài nổi bật</h3>
+        <div class="mini-feature" onclick="openPost(0)">
+          <img src="/assets/images/danhaycam.png">
+          <div>
+            <h4>Routine chăm sóc da buổi tối cho da nhạy cảm</h4>
+            <p>Làn da trở nên mềm mại hơn</p>
+          </div>
+        </div>
+        <div class="mini-feature" onclick="openPost(3)">
+          <img src="/assets/images/routine.png">
+          <div>
+            <h4>Routine sáng tối giản cho da dầu</h4>
+            <p>Đơn giản – hiệu quả</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>🔥 Chủ đề hot</h3>
+        <div class="tag-cloud">
+          <span onclick="filterCategory('Skincare')">Da nhạy cảm</span>
+          <span onclick="filterCategory('Makeup')">Son nude</span>
+          <span onclick="filterCategory('Routine')">Routine tối</span>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>👀 Bạn vừa xem</h3>
+        <ul id="recentView"></ul>
+      </div>
+
+      <div class="sidebar-quote">
+        “Làn da đẹp là kết quả của sự kiên nhẫn mỗi ngày.”
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- DETAIL MODAL -->
+  <div class="post-modal" id="postModal">
+    <div class="post-content">
+      <span class="close" onclick="closePost()">✕</span>
+      <div id="postDetail"></div>
+    </div>
+  </div>
+
+  <script src="/assets/json/blog.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/assets/json/products.js"></script>
+  <script src="/assets/json/slider.js"></script>
+</body>
+
+</html>

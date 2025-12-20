@@ -12,8 +12,14 @@
 
 <body>
   <main>
-    <div class="container"></div>
-    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("/components/header.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("header-placeholder").innerHTML = html;
+        });
+    </script>
 
 
     <!-- SEARCH BAR POPUP -->
@@ -31,7 +37,7 @@
         <div class="results-grid" id="resultsGrid"></div>
       </div>
     </section>
-    <section>
+    <section class="auth-section">
 
       <!-- -------- FORM ĐĂNG KÝ -------- -->
       <form id="registerForm" class="form-box">
@@ -119,9 +125,9 @@
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="assets/json/products.js"></script>
-  <script src="assets/json/slider.js"></script>
-  <script src="assets/json/sign.js"></script>
+  <script src="/assets/json/products.js"></script>
+  <script src="/assets/json/slider.js"></script>
+  <script src="/assets/json/sign.js"></script>
 </body>
 
 </html>

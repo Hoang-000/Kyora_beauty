@@ -11,8 +11,27 @@
 </head>
 
 <body>
-
-
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("/components/header.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("header-placeholder").innerHTML = html;
+                const openSearch = document.getElementById('openSearch');
+                const closeSearch = document.getElementById('closeSearch');
+                const searchOverlay = document.getElementById('searchOverlay');
+                if (openSearch && searchOverlay) {
+                    openSearch.addEventListener('click', () => {
+                        searchOverlay.style.display = 'flex'; // Hiển thị popup tìm kiếm
+                    });
+                }
+                if (closeSearch && searchOverlay) {
+                    closeSearch.addEventListener('click', () => {
+                        searchOverlay.style.display = 'none'; // Đóng popup tìm kiếm
+                    });
+                }
+            });
+    </script>
 
     <main>
         <div class="container product-detail-page">
@@ -89,7 +108,7 @@
     </main>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/assets/json/products.js"></script>
     <script src="/assets/json/slider.js"></script>
     <script src="/assets/json/product-detail.js"></script>

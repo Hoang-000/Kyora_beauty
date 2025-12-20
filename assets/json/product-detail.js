@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingMessage = document.getElementById('loading-message');
     const notFoundMessage = document.getElementById('not-found-message');
     const detailContainer = document.getElementById('product-detail-container');
-    
+
     // Tìm sản phẩm trong mảng products (được định nghĩa trong products.js)
     const product = products.find(p => p.id === productId);
 
     if (product) {
         // Nếu tìm thấy sản phẩm, tiến hành render chi tiết
         renderProductDetails(product);
-        
+
         // Ẩn thông báo tải, hiện nội dung chi tiết
         loadingMessage.style.display = 'none';
         detailContainer.style.display = 'block';
@@ -40,20 +40,20 @@ function renderProductDetails(product) {
     document.getElementById('brandName').textContent = product.brandName || '';
     document.getElementById('productName').textContent = product.name;
     document.getElementById('price').textContent = product.price;
-    
+
     const mainImage = document.getElementById('main-image');
     mainImage.src = product.image;
     mainImage.alt = product.name;
-    
+
     document.getElementById('shortDescription').textContent = product.description;
 
     // 2. Cập nhật nội dung các Block Chi tiết Xếp chồng
     document.getElementById('descriptionContent').textContent = product.description;
     document.getElementById('usesContent').textContent = product.uses || 'Đang cập nhật...';
     document.getElementById('howToUseContent').textContent = product.howToUse || 'Đang cập nhật...';
-    
+
     // Giữ định dạng xuống dòng cho Thành phần
-    document.getElementById('ingredientsContent').textContent = product.ingredients || 'Đang cập nhật...'; 
+    document.getElementById('ingredientsContent').textContent = product.ingredients || 'Đang cập nhật...';
 }
 
 /**
@@ -64,14 +64,16 @@ function setupActionButtons(product) {
     const buyNowBtn = document.querySelector('.action-buttons .btn-buy');
     const addToCartBtn = document.querySelector('.action-buttons .btn-add-cart');
     const quantityInput = document.getElementById('quantity');
-    
+
     buyNowBtn.addEventListener('click', () => {
         const quantity = parseInt(quantityInput.value);
-        alert(`Đã đặt mua ngay ${quantity} sản phẩm: ${product.name}`);
+        addToCartStorage(product, quantity);
+        window.location.href = '/cart/cart.html';
     });
 
     addToCartBtn.addEventListener('click', () => {
         const quantity = parseInt(quantityInput.value);
+        addToCartStorage(product, quantity);
         alert(`Đã thêm ${quantity} sản phẩm: ${product.name} vào giỏ hàng!`);
     });
 }
@@ -95,4 +97,25 @@ function setupAccordion() {
             }
         });
     });
+}
+
+/**
+ * Hàm lưu sản phẩm vào LocalStorage
+ */
+function addToCartStorage(product, quantity) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: quantity
+        });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
