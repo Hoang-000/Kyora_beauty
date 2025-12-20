@@ -1,0 +1,222 @@
+/* Trang_chi_tiết_sản_phẩm.css */
+
+/* --- LAYOUT CHUNG --- */
+
+.product-detail-page {
+    padding: 60px 0;
+    max-width: 1000px; /* Giới hạn chiều rộng nội dung chính */
+}
+
+/* --- PHẦN ẢNH VÀ TÓM TẮT --- */
+.product-main-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Khu vực ảnh */
+.image-gallery {
+    flex: 1;
+    min-width: 45%; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    position: sticky;
+    top: 100px; /* Hiệu ứng dính khi cuộn */
+    height: fit-content;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Khu vực thông tin tóm tắt */
+.product-summary {
+    flex: 1;
+    min-width: 55%;
+}
+
+.brand-name {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.product-summary h1 {
+    color: var(--accent-dark);
+    font-size: 32px;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.rating {
+    color: orange;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 36px;
+    color: var(--accent);
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.short-description {
+    border-top: 1px solid var(--pink-100);
+    padding-top: 20px;
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* Quantity Selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.quantity-selector input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--pink-100);
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.action-buttons .btn-buy,
+.action-buttons .btn-add-cart {
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s;
+    flex: 1;
+}
+
+.btn-buy {
+    background: var(--accent);
+    color: white;
+    border: 2px solid var(--accent);
+}
+
+.btn-buy:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.btn-add-cart {
+    background: white;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.btn-add-cart:hover {
+    background: var(--pink-50);
+}
+
+.policy-highlights {
+    padding: 15px;
+    background: var(--pink-50);
+    border: 1px dashed var(--pink-100);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+
+/* --- PHẦN CHI TIẾT XẾP CHỒNG (STACKED DETAILS) --- */
+.product-details-stacked {
+    padding: 30px 0;
+}
+
+/* Trang_chi_tiết_sản_phẩm.css */
+
+/* --- CÁC KHỐI CHI TIẾT CÓ THỂ ĐÓNG MỞ (ACCORDION) --- */
+
+.detail-title {
+    /* Đảm bảo tiêu đề có thể click được */
+    cursor: pointer; 
+    /* Thêm hiệu ứng cho tiêu đề khi được hover */
+    transition: color 0.2s;
+}
+
+.detail-title:hover {
+    color: var(--accent);
+}
+
+/* Biểu tượng đóng mở */
+.toggle-icon {
+    float: right;
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Xoay biểu tượng khi khối đang mở */
+.detail-title.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Nội dung của khối (được ẩn theo mặc định) */
+.detail-body {
+    /* Quan trọng: Ẩn nội dung và chuẩn bị cho transition */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.3s ease-out; /* Tạo hiệu ứng mượt */
+    
+    line-height: 1.8;
+    color: #444;
+    padding: 0 0 0 20px; /* Thụt lề nhẹ cho nội dung */
+}
+
+/* Khi khối được mở */
+.detail-body.is-open {
+    /* Đặt chiều cao lớn hơn nội dung để luôn hiển thị */
+    max-height: 2000px; 
+    padding: 15px 0 0 20px; /* Thêm padding sau khi mở */
+}
+/* Style đặc biệt cho Thành phần (thường là danh sách dài) */
+/*.ingredient-block .detail-body {
+    font-size: 14px;
+    white-space: pre-wrap; /* Giữ định dạng xuống dòng và khoảng trắng */
+ /*   font-family: monospace; /* Tùy chọn: dùng font cố định cho thành phần hóa học */
+/*}
+/* --- Responsive cho mobile --- */
+@media (max-width: 768px) {
+    .product-main-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .image-gallery {
+        position: static;
+        top: auto;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}

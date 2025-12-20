@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kyora Beauty — Sản phẩm</title>
+    <link rel="stylesheet" href="/assets/css/Trangchu.css">
+    <link rel="stylesheet" href="/assets/css/Trang_sản_phẩm.css">
+</head>
+
+<body>
+
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+            <button class="close-search" id="closeSearch">✕</button>
+        </div>
+    </div>
+
+    <section id="searchResults" class="search-results" style="display:none;">
+        <div class="container">
+            <h2>Kết quả tìm kiếm</h2>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+    </section>
+
+    <section class="product-banner-section">
+        <img src="/assets/images/Product_Banner.jpg" alt="Tất cả sản phẩm" class="product-banner-image">
+    </section>
+    <main class="container product-page">
+        <aside class="sidebar">
+
+            <div class="filter-group search-local-group">
+                <h4>Tìm kiếm sản phẩm</h4>
+                <input type="text" id="localSearchInput" placeholder="Nhập tên sản phẩm, thương hiệu...">
+            </div>
+            <h3>Danh mục</h3>
+            <ul class="category-list">
+                <li><a href="#" data-category="all" class="active-category">Tất cả sản phẩm</a></li>
+                <li><a href="#" data-category="face">Chăm sóc da mặt</a></li>
+                <li><a href="#" data-category="body">Chăm sóc da body</a></li>
+                <li><a href="#" data-category="makeup">Make up</a></li>
+            </ul>
+
+            <h3>Bộ lọc</h3>
+            <div class="filter-group">
+                <h4>Thương hiệu</h4>
+                <select id="brand-filter">
+                    <option value="all">Tất cả</option>
+                    <option value="cocoon">Cocoon</option>
+                    <option value="maybelline">Maybelline</option>
+                    <option value="larocheposay">La Roche-Posay</option>
+                    <option value="loreal">L'Oréal Paris</option>
+                </select>
+            </div>
+        </aside>
+
+        <section class="product-list-section">
+            <div class="product-grid" id="productGrid">
+                <p id="no-products" style="display:none;">Không có sản phẩm nào trong danh mục này.</p>
+            </div>
+            <div class="pagination-controls" id="paginationControls">
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script src="/assets/json/products.js"></script>
+    <script src="/assets/json/slider.js"></script>
+    <script src="/assets/json/product.js"></script>
+</body>
+
+</html>

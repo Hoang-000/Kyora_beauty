@@ -1,0 +1,37 @@
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="#"><img src="/assets/images/Logokyora.png" class="logo"></a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="openSearch">🔍</button>
+            <button class="icon-btn">👤</button>
+            <button class="icon-btn">🛒</button>
+        </div>
+    </div>
+</header>
+
+<!-- SEARCH BAR POPUP -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+        <button class="close-search" id="closeSearch">✕</button>
+    </div>
+</div>
+
+<!-- SEARCH RESULTS -->
+<section id="searchResults" class="search-results" style="display:none;">
+    <div class="container">
+        <h2>Kết quả tìm kiếm</h2>
+        <div class="results-grid" id="resultsGrid"></div>
+    </div>
+</section>

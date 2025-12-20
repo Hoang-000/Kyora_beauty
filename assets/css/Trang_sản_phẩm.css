@@ -1,0 +1,324 @@
+/* Trang_sản_phẩm.css */
+
+.product-page {
+    display: flex;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.page-title {
+    color: var(--accent-dark);
+    font-size: 28px;
+    margin-top: 0;
+    grid-column: 1 / -1; 
+    border-bottom: 2px solid var(--pink-100);
+    padding-bottom: 10px;
+}
+
+/* Sidebar (Filters) */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 20px;
+    background: var(--pink-50);
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: var(--accent-dark);
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--pink-100);
+    padding-bottom: 5px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.category-list li a {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 0;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+
+.category-list li a:hover,
+.category-list li a.active-category {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h4 {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+select#brand-filter {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--pink-100);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--accent-dark);
+}
+
+
+/* Product List */
+.product-list-section {
+    flex-grow: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Tái sử dụng product-card từ Trangchu.css */
+/* Tạo một kiểu riêng cho card trên trang sản phẩm để hiển thị thống nhất */
+.product-item {
+    background: #fff;
+    padding: 14px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-item img {
+    height: 200px;
+    object-fit: contain;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 16px;
+    margin: 10px 0 4px 0;
+    color: #333;
+}
+
+.product-item .price {
+    font-size: 16px; /* Giảm kích thước font */
+    font-weight: 700; /* Giữ in đậm để dễ thấy */
+    color: var(--accent-dark); /* Sử dụng màu nhấn */
+    margin: 10px 0; /* Khoảng cách trên dưới */
+}
+/* Responsive */
+@media(max-width: 900px) {
+    .product-page {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .page-title {
+        text-align: center;
+    }
+}
+
+.product-item .brand-name {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-item .product-description {
+    font-size: 13px;
+    color: #888;
+    margin: 6px 0 10px 0;
+    min-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Dùng cho trường hợp tràn dòng */
+
+    /* Cấu hình giới hạn dòng */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    
+    /* Thuộc tính không chuẩn (webkit) */
+    -webkit-line-clamp: 2;
+    
+    /* Thuộc tính chuẩn CSS (được khuyến nghị bởi cảnh báo) */
+    line-clamp: 2; /* Giới hạn 2 dòng */ 
+}
+
+.filter-group.search-local-group {
+    margin-bottom: 30px;
+}
+
+#localSearchInput {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--pink-100);
+    border-radius: 8px;
+    font-size: 14px;
+    outline-color: var(--accent);
+}
+
+/* Product Actions (Dành riêng cho Trang sản phẩm) */
+
+.product-item {
+    /* Đảm bảo sản phẩm có thể chứa các nút hành động và căn chỉnh nội dung */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+    padding: 14px; /* Giữ lại padding đã có */
+}
+
+/* Thêm khoảng trống và căn giữa các nút */
+.product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-buy {
+    flex-grow: 1;
+    background: var(--accent); /* Dùng màu hồng đậm đã định nghĩa */
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-buy:hover {
+    background: var(--accent-dark);
+}
+
+.btn-add-cart {
+    width: 40px;
+    height: 40px;
+    background: var(--pink-100); /* Dùng màu nền hồng nhạt đã định nghĩa */
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0; /* Đảm bảo nút này không bị co lại */
+}
+
+.btn-add-cart:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* PHÂN TRANG */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 8px;
+    padding-bottom: 30px;
+}
+
+.pagination-btn {
+    background: var(--pink-50);
+    color: var(--accent-dark);
+    border: 1px solid var(--pink-100);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination-btn:hover:not(.active) {
+    background: var(--pink-100);
+}
+
+.pagination-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    pointer-events: none; /* Vô hiệu hóa click trên trang hiện tại */
+}
+
+.pagination-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--pink-50);
+    color: var(--muted);
+}
+
+/* Product Banner Style */
+.product-banner-section {
+    padding: 0; /* Xóa padding mặc định */
+    margin-bottom: 40px; /* Tạo khoảng cách dưới banner */
+    margin-top: 1px; /* Đảm bảo banner nằm sát header */
+}
+
+.product-banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Loại bỏ border-radius nếu bạn muốn banner vuông góc cạnh */
+    border-radius: 0; 
+    /* Đảm bảo ảnh banner không bị giới hạn bởi container 1200px */
+    max-width: var(--container); 
+    display: block;
+    margin: 0 auto;
+}
+
+/* Điều chỉnh khoảng cách của phần main sau khi thêm banner */
+.product-page {
+    padding-top: 0; 
+}
+/* Loại bỏ gạch chân cho link bao bọc card sản phẩm */
+.product-item-link {
+    text-decoration: none; /* Loại bỏ gạch chân trên toàn bộ card */
+    display: block; /* Đảm bảo link chiếm toàn bộ diện tích card */
+    color: inherit; /* Kế thừa màu chữ từ body, không phải màu xanh mặc định của link */
+}
+
+/* Đảm bảo tiêu đề sản phẩm không bị gạch chân và có màu sắc rõ ràng */
+.product-item-link h3 {
+    text-decoration: none;
+    color: var(--accent-dark); /* Sử dụng màu tối để nổi bật */
+    transition: color 0.2s;
+}
+
+/* Thêm hiệu ứng hover nhẹ nhàng */
+.product-item-link:hover h3 {
+    color: var(--accent); /* Đổi màu khi hover để báo hiệu là có thể click */
+}
+
+/* Tùy chọn: Thêm hiệu ứng box-shadow khi hover */
+.product-item-link:hover .product-item {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}

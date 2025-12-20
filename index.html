@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kyora Beauty — Trang Chủ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/Trangchu.css">
+</head>
+
+<body>
+
+    <!-- BANNER SLIDER -->
+    <section class="hero">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/images/Banner1.png"></div>
+                <div class="swiper-slide"><img src="assets/images/Banner2.png"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+
+            <!-- HEADER -->
+            <header class="site-header">
+                <div class="container header-inner">
+                    <a href="#"><img src="assets/images/Logokyora.png" class="logo"></a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#products">Sản phẩm</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#contact">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <button class="icon-btn" id="openSearch">🔍</button>
+                        <button class="icon-btn">👤</button>
+                        <button class="icon-btn">🛒</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- SEARCH BAR POPUP -->
+            <div class="search-overlay" id="searchOverlay">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+                    <button class="close-search" id="closeSearch">✕</button>
+                </div>
+            </div>
+
+            <!-- SEARCH RESULTS -->
+            <section id="searchResults" class="search-results" style="display:none;">
+                <div class="container">
+                    <h2>Kết quả tìm kiếm</h2>
+                    <div class="results-grid" id="resultsGrid"></div>
+                </div>
+            </section>
+
+            <!-- HIGHLIGHTS -->
+            <section class="highlights">
+                <div class="grid-3">
+                    <article class="highlight">
+                        <img src="assets/images/ic-payment.svg">
+                        <h4>Thanh toán an toàn</h4>
+                        <p>Nhiều phương thức thanh toán.</p>
+                    </article>
+                    <article class="highlight">
+                        <img src="assets/images/ic-authentic.svg">
+                        <h4>Chính hãng 100%</h4>
+                        <p>Đảm bảo nguồn gốc.</p>
+                    </article>
+                    <article class="highlight">
+                        <img src="assets/images/ic-fast.svg">
+                        <h4>Giao nhanh 2H</h4>
+                        <p>Nội thành Hà Nội.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- KHUYẾN MÃI NỔI BẬT -->
+            <section class="promo-banner">
+                <h2>KHUYẾN MÃI</h2>
+            </section>
+            <div class="promo-bg">
+            </div>
+            <section class="promo">
+                <div class="swiper promoSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/images/promo1.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/promo2.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/promo3.jpg"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- HÀNG MỚI VỀ -->
+            <section class="promo-banner new-arrival-banner">
+                <h2>HÀNG MỚI VỀ</h2>
+            </section>
+
+            <section class="new-arrivals">
+                <div class="swiper newSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product-card"><img src="assets/images/new1.jpg">
+                            <h3>Serum dưỡng ẩm</h3>
+                            <p class="price">320.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="assets/images/new2.jpg">
+                            <h3>Sữa rửa mặt</h3>
+                            <p class="price">185.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="assets/images/new3.jpg">
+                            <h3>Toner hoa hồng</h3>
+                            <p class="price">210.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="assets/images/new4.jpg">
+                            <h3>Mặt nạ</h3>
+                            <p class="price">120.000₫</p>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- BÁN CHẠY -->
+            <section class="section-title">
+                <h2>Sản phẩm bán chạy</h2>
+            </section>
+            <section class="best-sellers">
+                <div class="swiper bestSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/images/bs1.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/bs2.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/bs3.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/bs4.jpg"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- THƯƠNG HIỆU HỢP TÁC -->
+            <section class="section-title">
+                <h2>Thương hiệu nổi bật</h2>
+            </section>
+            <section class="brands">
+                <div class="swiper brandSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/images/OIP.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/db8c2e203245015.6696e51f31275.jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/OIP (1).jpg"></div>
+                        <div class="swiper-slide"><img src="assets/images/brand4.png"></div>
+                        <div class="swiper-slide"><img src="assets/images/brand5.png"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOG -->
+            <section id="blog" class="section-title">
+                <h2>Góc làm đẹp & Sự kiện</h2>
+            </section>
+            <section class="blog-preview">
+                <div class="swiper blogSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide blog-card"><img src="assets/images/blog1.jpg">
+                            <h3>6 tác dụng tẩy da chết</h3>
+                            <p class="meta">05/11/2025</p>
+                        </div>
+                        <div class="swiper-slide blog-card"><img src="assets/images/blog2.jpg">
+                            <h3>7 thói quen làm đẹp</h3>
+                            <p class="meta">28/10/2025</p>
+                        </div>
+                        <div class="swiper-slide blog-card"><img src="assets/images/blog3.jpg">
+                            <h3>Mỹ phẩm thiên nhiên</h3>
+                            <p class="meta">12/09/2025</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEWSLETTER -->
+            <section class="newsletter">
+                <div class="newsletter-inner">
+                    <div>
+                        <h3>Nhận bản tin làm đẹp</h3>
+                        <p>Giảm 10% cho đơn đầu tiên.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập email">
+                        <button>Đăng ký</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col"><img src="assets/images/Logokyora.png" class="footer-logo">
+                <p>Kyora Beauty</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ trợ</h4>
+                <p>Đổi trả</p>
+                <p>Bảo mật</p>
+                <p>Hướng dẫn mua hàng</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên hệ</h4>
+                <p>46 Nguyễn Ngọc Nại</p>
+                <p>kyora@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Giờ mở cửa</h4>
+                <p>8:00 — 21:00</p>
+                <p>Hotline: 039687799</p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Kyora — All rights reserved</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/json/products.js"></script>
+    <script src="assets/json/slider.js"></script>
+</body>
+
+</html>

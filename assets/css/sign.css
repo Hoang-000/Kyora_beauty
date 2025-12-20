@@ -1,0 +1,80 @@
+body {
+    
+}
+
+.form-box {
+    background: #fff;
+    padding: 25px;
+    border-left: 5px solid #c62828;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 800px; 
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.btn {
+    width: 100%;
+    background: #c62828;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.note {
+    text-align: center;
+    color: #777;
+    margin: 20px 0 10px;
+}
+
+.social-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fb, .gg {
+    flex: 1;
+    padding: 8px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.fb { background: #3b5998; }
+.gg { background: #db4437; }
+
+.switch {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.switch span {
+    color: #c62828;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
