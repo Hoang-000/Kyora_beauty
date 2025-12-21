@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tài khoản - Kyora Beauty</title>
-  <link rel="stylesheet" href="/assets/css/Trangchu.css">
-  <link rel="stylesheet" href="/assets/css/sign.css">
+  <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trangchu.css">
+  <link rel="stylesheet" href="/Kyora_beauty/assets/css/sign.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
   <!-- Header -->
   <div id="header-placeholder"></div>
   <script>
-    fetch('/components/header.html')
+    fetch('/Kyora_beauty/components/header.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
@@ -176,14 +176,14 @@
 
   <div id="footer-placeholder"></div>
   <script>
-    fetch("../components/footer.html")
+    fetch("/Kyora_beauty/components/footer.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("footer-placeholder").innerHTML = html;
       });
   </script>
   <!-- Script xử lý -->
-  <script src="/assets/json/sign.js"></script>
+  <script src="/Kyora_beauty/assets/json/sign.js"></script>
 
 </body>
 
