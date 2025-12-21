@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Beauty Blog - Kyora</title>
-  <link rel="stylesheet" href="/assets/css/blog.css">
-  <link rel="stylesheet" href="/assets/css/Trangchu.css">
+  <link rel="stylesheet" href="/Kyora_beauty/assets/css/blog.css">
+  <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trangchu.css">
 
 </head>
 
 <body>
   <div id="header-placeholder"></div>
   <script>
-    fetch("/components/header.html")
+    fetch("/Kyora_beauty/components/header.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("header-placeholder").innerHTML = html;
@@ -51,14 +51,14 @@
       <div class="sidebar-box">
         <h3>Bài nổi bật</h3>
         <div class="mini-feature" onclick="openPost(0)">
-          <img src="/assets/images/danhaycam.png">
+          <img src="/Kyora_beauty/assets/images/danhaycam.png">
           <div>
             <h4>Routine chăm sóc da buổi tối cho da nhạy cảm</h4>
             <p>Làn da trở nên mềm mại hơn</p>
           </div>
         </div>
         <div class="mini-feature" onclick="openPost(3)">
-          <img src="/assets/images/routine.png">
+          <img src="/Kyora_beauty/assets/images/routine.png">
           <div>
             <h4>Routine sáng tối giản cho da dầu</h4>
             <p>Đơn giản – hiệu quả</p>
@@ -98,16 +98,16 @@
 
   <div id="footer-placeholder"></div>
   <script>
-    fetch("../components/footer.html")
+    fetch("/Kyora_beauty/components/footer.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("footer-placeholder").innerHTML = html;
       });
   </script>
-  <script src="/assets/json/blog.js"></script>
+  <script src="/Kyora_beauty/assets/json/blog.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/assets/json/products.js"></script>
-  <script src="/assets/json/slider.js"></script>
+  <script src="/Kyora_beauty/assets/json/products.js"></script>
+  <script src="/Kyora_beauty/assets/json/slider.js"></script>
 </body>
 
 </html>
