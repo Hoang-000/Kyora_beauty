@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let searchKeyword = '';
 
     function createProductCard(product) {
-        const detailLink = `/product/product-detail.html?id=${product.id}`;
+        const detailLink = `/Kyora_beauty/product/product-detail.html?id=${product.id}`;
 
         return `
             <a href="${detailLink}" class="product-item-link"> <div class="product-item">
