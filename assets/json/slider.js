@@ -133,13 +133,15 @@ function displayResults(list) {
     resultsGrid.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
   } else {
     list.forEach(product => {
+      const detailLink = `/Kyora_beauty/product/product-detail.html?id=${product.id}`;
       resultsGrid.innerHTML += `
-                <div class="result-card">
+                <a href="${detailLink}" class="product-item-link">
+                    <div class="result-card">
                     <img src="${product.image}">
                     <h3>${product.name}</h3>
                     <p>${product.price}</p>
-                </div>
-            `;
+                    </div>
+                </a>`;
     });
   }
 
