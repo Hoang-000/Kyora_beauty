@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyora Beauty — Trang Chủ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../assets/css/Trangchu.css">
+    <link rel="stylesheet" href="assets/css/Trangchu.css">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
     <section class="hero">
         <div class="swiper bannerSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="../assets/images/Banner1.png"></div>
-                <div class="swiper-slide"><img src="../assets/images/Banner2.png"></div>
+                <div class="swiper-slide"><img src="assets/images/Banner1.png"></div>
+                <div class="swiper-slide"><img src="assets/images/Banner2.png"></div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
@@ -34,17 +34,17 @@
             <section class="highlights">
                 <div class="grid-3">
                     <article class="highlight">
-                        <img src="../assets/images/thanh toán 1.png">
+                        <img src="assets/images/thanh toán 1.png">
                         <h4>Thanh toán an toàn</h4>
                         <p>Nhiều phương thức thanh toán.</p>
                     </article>
                     <article class="highlight">
-                        <img src="../assets/images/cam kết.png">
+                        <img src="assets/images/cam kết.png">
                         <h4>Chính hãng 100%</h4>
                         <p>Đảm bảo nguồn gốc.</p>
                     </article>
                     <article class="highlight">
-                        <img src="../assets/images/vận chuyển ne.png">
+                        <img src="assets/images/vận chuyển ne.png">
                         <h4>Giao nhanh 4H</h4>
                         <p>Nội thành Hà Nội.</p>
                     </article>
@@ -89,11 +89,11 @@
             </section>
             <section class="brands">
                 <div class="brand-grid">
-                    <div class="brand-item"><img src="../assets/images/oip.jpg" alt="Brand 1"></div>
-                    <div class="brand-item"><img src="../assets/images/a.jpg" alt="Brand 2"></div>
-                    <div class="brand-item"><img src="../assets/images/Maybelline-Logo-1915-1990s.png" alt="Brand 3">
+                    <div class="brand-item"><img src="assets/images/oip.jpg" alt="Brand 1"></div>
+                    <div class="brand-item"><img src="assets/images/a.jpg" alt="Brand 2"></div>
+                    <div class="brand-item"><img src="assets/images/Maybelline-Logo-1915-1990s.png" alt="Brand 3">
                     </div>
-                    <div class="brand-item"><img src="../assets/images/oip-1.jpg" alt="Brand 4"></div>
+                    <div class="brand-item"><img src="assets/images/oip-1.jpg" alt="Brand 4"></div>
                 </div>
             </section>
 
@@ -120,13 +120,13 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../assets/json/products.js"></script>
-    <script src="../assets/json/home-products.js"></script>
-    <script src="../assets/json/slider.js"></script>
+    <script src="assets/json/products.js"></script>
+    <script src="assets/json/home-products.js"></script>
+    <script src="assets/json/slider.js"></script>
 
     <script>
         // Load Header
-        fetch('../components/header.html')
+        fetch('components/header.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -156,7 +156,7 @@
             });
 
         // Load Footer
-        fetch('../components/footer.html')
+        fetch('components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
