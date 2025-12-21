@@ -54,9 +54,10 @@ new Swiper('.brandSwiper', {
   loop: true,
   slidesPerView: 5,
   spaceBetween: 30,
-  autoplay: { delay: 2500, disableOnInteraction: false },
+  autoplay: { delay: 2200 },
+  centeredSlides: true,
   breakpoints: {
-    0: { slidesPerView: 2 },
+    0: { slidesPerView: 2.2 },
     600: { slidesPerView: 3 },
     900: { slidesPerView: 4 },
     1200: { slidesPerView: 5 }

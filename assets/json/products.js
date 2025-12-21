@@ -11,7 +11,10 @@ const products = [
         description: "Kem nền Loreal Perfect Match mang lại lớp nền mỏng nhẹ phủ sương, phù hợp với các cô nàng thích sự tự nhiên cho trang điểm hàng ngày. ",
         uses: "Là lựa chọn lý tưởng cho da thường và da dầu, công thức kem nền mịn độc quyền của chúng tôi có các hạt phấn siêu nhỏ giúp kiểm soát bóng nhờn và làm mờ lỗ chân lông.Kem nền thu nhỏ lỗ chân lông.<br>Đã được bác sĩ da liễu kiểm nghiệm.Đã được kiểm nghiệm dị ứng.Không gây mụn.",
         howToUse: "Lấy một lượng kem nền vừa đủ ra mu bàn tay, sau đó dùng cọ hoặc mút tán đều lên mặt và cổ, tập trung ở các vùng cần che phủ.",
-        ingredients: "CYCLOPENTASILOXANE,AQUA / NƯỚC,POLYPROPYLSILSESQUIOXANE,ISODODECANE,DIMETHICONE,C30-45 ALKYLDIMETHYLSILYL POLYPROPYLSILSESQUIOXANE,PEG-10 DIMETHICONE,GLYCERIN,SILICA,DIMETHICONE/POLYGLYCERIN-3 CROSSPOLYMER,SODIUM CHLORIDE,NYLON-12,PHENOXYETHANOL,DISTEARDIMONIUM HECTORITE,DISODIUM STEAROYL GLUTAMATE,CYCLOMETHICONE,CHLORPHENESIN,"
+        ingredients: "CYCLOPENTASILOXANE,AQUA / NƯỚC,POLYPROPYLSILSESQUIOXANE,ISODODECANE,DIMETHICONE,C30-45 ALKYLDIMETHYLSILYL POLYPROPYLSILSESQUIOXANE,PEG-10 DIMETHICONE,GLYCERIN,SILICA,DIMETHICONE/POLYGLYCERIN-3 CROSSPOLYMER,SODIUM CHLORIDE,NYLON-12,PHENOXYETHANOL,DISTEARDIMONIUM HECTORITE,DISODIUM STEAROYL GLUTAMATE,CYCLOMETHICONE,CHLORPHENESIN,",
+        isSale: true,
+        isNew: true,
+        isBestSeller: false
     },
     {
         id: 2,
@@ -33,7 +36,10 @@ const products = [
         category: "makeup",
         brand: "loreal",
         brandName: "L'Oréal Paris",
-        description: "Chì kẻ mày là một trong những món đồ hỗ trợ đắc lực cho quá trình trang điểm của các nàng để có hàng lông mày sắc nét, thu hút mọi ánh nhìn. Đặc biệt, với những nàng có hàng lông mày nhạt, không đều màu thì bút kẻ mày lại càng cần thiết. Chì kẻ chân mày 2 đầu Loreal với thiết kế hai đầu kẻ tiện lợi là một trong những sản phẩm kẻ mày đang được yêu thích trong thời gian gần đây."
+        description: "Chì kẻ mày là một trong những món đồ hỗ trợ đắc lực cho quá trình trang điểm của các nàng để có hàng lông mày sắc nét, thu hút mọi ánh nhìn. Đặc biệt, với những nàng có hàng lông mày nhạt, không đều màu thì bút kẻ mày lại càng cần thiết. Chì kẻ chân mày 2 đầu Loreal với thiết kế hai đầu kẻ tiện lợi là một trong những sản phẩm kẻ mày đang được yêu thích trong thời gian gần đây.",
+        isSale: true,
+        isNew: true,
+        isBestSeller: false
     },
     {
         id: 4,
@@ -63,7 +69,7 @@ const products = [
         category: "makeup",
         brand: "loreal",
         brandName: "L'Oréal Paris",
-        description: "Bảng màu mắt Loreal Paris Color Riche La Palette Nude sở hữu 10 ô màu nude thời thượng phù hợp với tông màu da từ sậm đến sáng, giúp làm bật lên mọi dáng mắt. Tông màu trầm ấm này thích hợp dùng trang điểm thường ngày khi đi làm, đi chơi, hẹn hò. Bảng màu mắt Loreal Paris Color Riche La Palette Nude sẽ giúp bạn bộc lộ những nét đẹp tiềm ẩn."
+        description: "Bảng màu mắt Loreal Paris Color Riche La Palette Nude sở hữu 10 ô màu nude thời thượng phù hợp với tông màu da từ sậm đến sáng, giúp làm bật lên mọi dáng mắt. Tông màu trầm ấm này thích hợp dùng trang điểm thường ngày khi đi làm, đi chơi, hẹn hò. Bảng màu mắt Loreal Paris Color Riche La Palette Nude sẽ giúp bạn bộc lộ những nét đẹp tiềm ẩn.",
     },
     {
         id: 7,
@@ -83,7 +89,10 @@ const products = [
         category: "makeup",
         brand: "loreal",
         brandName: "L'Oréal Paris",
-        description: "Cấp ẩm tức thì cho da tay khô ráp, bảo vệ da khỏi các tác động từ môi trường và duy trì độ ẩm lâu dài."
+        description: "Cấp ẩm tức thì cho da tay khô ráp, bảo vệ da khỏi các tác động từ môi trường và duy trì độ ẩm lâu dài.",
+        isSale: true,
+        isNew: false,
+        isBestSeller: true
     },
     {
         id: 9,
@@ -133,7 +142,8 @@ const products = [
         image: "../assets/images/cham-soc-da-mat/loreal-paris/nuoc-tay-trang-da-nang-3in1-kiem-dau-95ml.png",
         brand: "loreal",
         brandName: "L'Oréal Paris",
-        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày."
+        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày.",
+
     },
     {
         id: 14,
@@ -193,7 +203,10 @@ const products = [
         image: "../assets/images/cham-soc-da-body/cocoon/ca-phe-dak-lak-tay-da-chet-body-200ml.png",
         brand: "cocoon",
         brandName: "Cocoon",
-        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày."
+        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày.",
+        isSale: false,
+        isNew: false,
+        isBestSeller: true
     },
     {
         id: 20,
@@ -213,7 +226,8 @@ const products = [
         image: "../assets/images/cham-soc-da-body/cocoon/tay-da-chet-toan-than-ca-phe-dak-lak.png",
         brand: "cocoon",
         brandName: "Cocoon",
-        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày."
+        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày.",
+
     },
     {
         id: 22,
@@ -223,7 +237,8 @@ const products = [
         image: "../assets/images/cham-soc-da-body/cocoon/tay-te-bao-chet-body-duong-thot-not-200ml.png",
         brand: "cocoon",
         brandName: "Cocoon",
-        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày."
+        description: "Đầu cọ mảnh, sắc nét, dễ dàng tạo đường kẻ mắt hoàn hảo, công thức lâu trôi suốt cả ngày.",
+
     },
     {
         id: 23,
@@ -256,7 +271,10 @@ const products = [
         category: "makeup",
         brand: "maybelline",
         brandName: "Maybelline",
-        description: " Kem Che Khuyết Điểm Maybelline Fit Me® Concealer cho làn da không tì vết với độ che phủ tự nhiên. Kem che khuyết điểm không chứa dầu này tệp với tông màu da cho làn da đều màu hơn."
+        description: " Kem Che Khuyết Điểm Maybelline Fit Me® Concealer cho làn da không tì vết với độ che phủ tự nhiên. Kem che khuyết điểm không chứa dầu này tệp với tông màu da cho làn da đều màu hơn.",
+        isSale: true,
+        isNew: false,
+        isBestSeller: true
     },
 
     {
@@ -268,6 +286,7 @@ const products = [
         brand: "maybelline",
         brandName: "Maybelline",
         description: " Kem nền Maybelline Fit Me có kết cấu kem lỏng nhẹ, dễ dàng tán đều lên da, tạo hiệu ứng lì mịn, che phủ hoàn toàn các khuyến điểm trên da, bao gồm vết thâm nám, quầng thâm mắt và đặc biệt là lỗ chân lông to khiến da mịn màng, tươi tắn, đẹp không tì vết."
+
     },
 
     {
@@ -300,7 +319,10 @@ const products = [
         category: "makeup",
         brand: "maybelline",
         brandName: "Maybelline",
-        description: " Mascara Maybelline Dài Mi và Cong Mi, Chuốt Mi Đen là sản phẩm mascara đến từ thương hiệu mỹ phẩm Maybeline của Mỹ, có tác dụng giúp làm dày gấp 3 lần và hàng mi cong vút 75 độ, bền đẹp suốt 18 giờ. Nhờ công thức tối ưu kết hợp với đầu cọ được thiết kế dễ dàng chải tận gốc sợi mi, giúp mascara được bao phủ hiệu quả, cho bạn đôi mi dày ấn tượng, cong quyến rũ. Sản phẩm không thấm nước, không lem. Kết cấu dạng gel đặc biệt, nhẹ, mượt giữ mi cong và dày, không vón cục."
+        description: " Mascara Maybelline Dài Mi và Cong Mi, Chuốt Mi Đen là sản phẩm mascara đến từ thương hiệu mỹ phẩm Maybeline của Mỹ, có tác dụng giúp làm dày gấp 3 lần và hàng mi cong vút 75 độ, bền đẹp suốt 18 giờ. Nhờ công thức tối ưu kết hợp với đầu cọ được thiết kế dễ dàng chải tận gốc sợi mi, giúp mascara được bao phủ hiệu quả, cho bạn đôi mi dày ấn tượng, cong quyến rũ. Sản phẩm không thấm nước, không lem. Kết cấu dạng gel đặc biệt, nhẹ, mượt giữ mi cong và dày, không vón cục.",
+        isSale: false,
+        isNew: true,
+        isBestSeller: false
     },
 
     {
@@ -311,7 +333,10 @@ const products = [
         category: "makeup",
         brand: "maybelline",
         brandName: "Maybelline",
-        description: " Phấn Má Hồng Fit Me Mono Blush 4.5g là sản phẩm má hồng dạng phấn nén đến từ thương hiệu Maybelline của Mỹ, có khả năng lên màu chuẩn - mịn mướt - tự nhiên và bền màu suốt cả ngày. Với các hạt vi phấn kết cấu nhẹ và mịn giúp chuẩn màu trong 1 lần chạm, tạo hiệu ứng gò má ửng hồng tự nhiên. Chất bột kem mịn mượt tựa như tan vào da, cho khả năng bám màu lâu trôi, bền màu lên đến 16H. Sản phẩm an toàn, không chứa hóa chất độc hại, phù hợp với mọi loại da."
+        description: " Phấn Má Hồng Fit Me Mono Blush 4.5g là sản phẩm má hồng dạng phấn nén đến từ thương hiệu Maybelline của Mỹ, có khả năng lên màu chuẩn - mịn mướt - tự nhiên và bền màu suốt cả ngày. Với các hạt vi phấn kết cấu nhẹ và mịn giúp chuẩn màu trong 1 lần chạm, tạo hiệu ứng gò má ửng hồng tự nhiên. Chất bột kem mịn mượt tựa như tan vào da, cho khả năng bám màu lâu trôi, bền màu lên đến 16H. Sản phẩm an toàn, không chứa hóa chất độc hại, phù hợp với mọi loại da.",
+        isSale: false,
+        isNew: true,
+        isBestSeller: false
     },
 
     {
