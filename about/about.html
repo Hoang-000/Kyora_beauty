@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="../assets/css/Trangchu.css">
+    <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trangchu.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <!-- HEADER -->
     <div id="header-placeholder"></div>
     <script>
-        fetch("../components/header.html")
+        fetch("/Kyora_beauty/components/header.html")
             .then(res => res.text())
             .then(html => {
                 document.getElementById("header-placeholder").innerHTML = html;
@@ -94,15 +94,15 @@
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
     <script>
-        fetch("../components/footer.html")
+        fetch("/Kyora_beauty/components/footer.html")
             .then(res => res.text())
             .then(html => {
                 document.getElementById("footer-placeholder").innerHTML = html;
             });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../assets/json/products.js"></script>
-    <script src="../assets/json/slider.js"></script>
+    <script src="/Kyora_beauty/assets/json/products.js"></script>
+    <script src="/Kyora_beauty/assets/json/slider.js"></script>
 
 </body>
 
