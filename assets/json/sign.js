@@ -12,21 +12,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // --- 1. XỬ LÝ ĐĂNG NHẬP / ĐĂNG KÝ ---
 
-function switchTab(tab) {
+function switchAuthTab(tabName) {
+    // Ẩn tất cả các form
     const loginForm = document.getElementById('login-form');
     const regForm = document.getElementById('register-form');
-    const tabs = document.querySelectorAll('.auth-tab');
+    const forgotForm = document.getElementById('forgot-form');
 
-    if (tab === 'login') {
-        loginForm.classList.remove('hidden');
-        regForm.classList.add('hidden');
-        tabs[0].classList.add('active');
-        tabs[1].classList.remove('active');
-    } else {
-        loginForm.classList.add('hidden');
-        regForm.classList.remove('hidden');
-        tabs[1].classList.add('active');
-        tabs[0].classList.remove('active');
+    if (loginForm) loginForm.classList.add('hidden');
+    if (regForm) regForm.classList.add('hidden');
+    if (forgotForm) forgotForm.classList.add('hidden');
+
+    // Xử lý active state cho tabs
+    const tabs = document.querySelectorAll('.auth-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+
+    // Hiện form tương ứng
+    if (tabName === 'login') {
+        if (loginForm) loginForm.classList.remove('hidden');
+        if (tabs[0]) tabs[0].classList.add('active');
+    } else if (tabName === 'register') {
+        if (regForm) regForm.classList.remove('hidden');
+        if (tabs[1]) tabs[1].classList.add('active');
+    } else if (tabName === 'forgot') {
+        if (forgotForm) forgotForm.classList.remove('hidden');
+        // Tab quên mật khẩu không cần highlight tab nào hoặc giữ nguyên
     }
 }
 
@@ -50,7 +59,7 @@ function handleRegister(e) {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Đăng ký thành công! Vui lòng đăng nhập.");
-    switchTab('login');
+    switchAuthTab('login');
 }
 
 function handleLogin(e) {
@@ -69,6 +78,12 @@ function handleLogin(e) {
         errorMsg.textContent = "Email hoặc mật khẩu không đúng!";
         errorMsg.style.display = 'block';
     }
+}
+
+// Xử lý submit form quên mật khẩu (Demo)
+function handleForgot(e) {
+    e.preventDefault();
+    alert('Yêu cầu khôi phục mật khẩu đã được gửi vào email của bạn!');
 }
 
 // --- 2. XỬ LÝ CẬP NHẬT PROFILE ---
@@ -134,4 +149,36 @@ function handleUpdateProfile(e) {
 function handleLogout() {
     localStorage.removeItem('currentUser');
     location.reload();
+}
+
+// --- 3. XỬ LÝ ĐĂNG NHẬP MẠNG XÃ HỘI (MÔ PHỎNG) ---
+
+function handleSocialLogin(provider) {
+    let user;
+    // Tạo dữ liệu giả lập cho Facebook/Google
+    if (provider === 'facebook') {
+        user = { email: 'fb_user@example.com', name: 'Người dùng Facebook', phone: '', address: '', province: '', district: '', ward: '', gender: '', dob: '', password: 'social_login' };
+    } else if (provider === 'google') {
+        user = { email: 'gg_user@gmail.com', name: 'Người dùng Google', phone: '', address: '', province: '', district: '', ward: '', gender: '', dob: '', password: 'social_login' };
+    }
+
+    if (user) {
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        // Kiểm tra xem user giả lập này đã có trong danh sách chưa để giữ lại thông tin cũ nếu có
+        const existingUser = users.find(u => u.email === user.email);
+
+        if (existingUser) {
+            user = existingUser;
+        } else {
+            // Nếu chưa có thì thêm vào danh sách users
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Lưu vào phiên đăng nhập hiện tại
+        localStorage.setItem('currentUser', JSON.stringify(user));
+
+        alert(`Đăng nhập bằng ${provider === 'facebook' ? 'Facebook' : 'Google'} thành công!`);
+        showProfile(user);
+    }
 }
