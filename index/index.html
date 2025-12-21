@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kyora Beauty — Trang Chủ</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/Trangchu.css">
+    <style>
+        .product-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            /* Đảm bảo chiều cao ảnh đồng nhất */
+            object-fit: contain;
+            /* Giữ tỷ lệ ảnh không bị méo */
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BANNER SLIDER -->
+    <section class="hero">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/assets/images/Banner1.png"></div>
+                <div class="swiper-slide"><img src="/assets/images/Banner2.png"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+
+            <!-- HEADER -->
+            <div id="header-placeholder"></div>
+ <!--           <script>
+                fetch("/components/header.html")
+                    .then(res => res.text())
+                    .then(html => {
+                        document.getElementById("header-placeholder").innerHTML = html;
+                        const openSearch = document.getElementById('openSearch');
+                        const closeSearch = document.getElementById('closeSearch');
+                        const searchOverlay = document.getElementById('searchOverlay');
+                        if (openSearch && searchOverlay) {
+                            openSearch.addEventListener('click', () => {
+                                searchOverlay.style.display = 'flex'; // Hiển thị popup tìm kiếm
+                            });
+                        }
+                        if (closeSearch && searchOverlay) {
+                            closeSearch.addEventListener('click', () => {
+                                searchOverlay.style.display = 'none'; // Đóng popup tìm kiếm
+                            });
+                        }
+                    });
+            </script> -->
+
+
+
+            <!-- HIGHLIGHTS -->
+            <section class="highlights">
+                <div class="grid-3">
+                    <article class="highlight">
+                        <img src="/assets/images/ic-payment.svg">
+                        <h4>Thanh toán an toàn</h4>
+                        <p>Nhiều phương thức thanh toán.</p>
+                    </article>
+                    <article class="highlight">
+                        <img src="/assets/images/ic-authentic.svg">
+                        <h4>Chính hãng 100%</h4>
+                        <p>Đảm bảo nguồn gốc.</p>
+                    </article>
+                    <article class="highlight">
+                        <img src="/assets/images/ic-fast.svg">
+                        <h4>Giao nhanh 2H</h4>
+                        <p>Nội thành Hà Nội.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- KHUYẾN MÃI NỔI BẬT -->
+            <section class="promo-banner">
+                <h2>KHUYẾN MÃI</h2>
+            </section>
+            <div class="promo-bg">
+            </div>
+            <section class="promo">
+                <div class="swiper promoSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/assets/images/promo1.jpg"></div>
+                        <div class="swiper-slide"><img src="/assets/images/promo2.jpg"></div>
+                        <div class="swiper-slide"><img src="/assets/images/promo3.jpg"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- HÀNG MỚI VỀ -->
+            <section class="promo-banner new-arrival-banner">
+                <h2>HÀNG MỚI VỀ</h2>
+            </section>
+
+            <section class="new-arrivals">
+                <div class="swiper newSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product-card"><img src="/assets/images/new1.jpg">
+                            <h3>Serum dưỡng ẩm</h3>
+                            <p class="price">320.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="/assets/images/new2.jpg">
+                            <h3>Sữa rửa mặt</h3>
+                            <p class="price">185.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="/assets/images/new3.jpg">
+                            <h3>Toner hoa hồng</h3>
+                            <p class="price">210.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"><img src="/assets/images/new4.jpg">
+                            <h3>Mặt nạ</h3>
+                            <p class="price">120.000₫</p>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- BÁN CHẠY -->
+            <section class="section-title">
+                <h2>Sản phẩm bán chạy</h2>
+            </section>
+            <section class="best-sellers">
+                <div class="swiper bestSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=25'">
+                            <img src="/assets/images/makeup/maybelline/fit-me-kem-che-khuyet-diem.png">
+                            <h3>Kem Che Khuyết Điểm Fit Me</h3>
+                            <p class="price">178.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=30'">
+                            <img src="/assets/images/makeup/maybelline/phan-ma-fit-me-mono-blush.png">
+                            <h3>Phấn Má Hồng Fit Me</h3>
+                            <p class="price">110.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=31'">
+                            <img src="/assets/images/makeup/maybelline/son-kem-sensational-cushion-mattes.png">
+                            <h3>Son Kem Lì Sensational</h3>
+                            <p class="price">228.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=21'">
+                            <img src="/assets/images/cham-soc-da-body/cocoon/tay-da-chet-toan-than-ca-phe-dak-lak.png">
+                            <h3>Tẩy Da Chết Cà Phê Đắk Lắk</h3>
+                            <p class="price">400.000₫</p>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- THƯƠNG HIỆU HỢP TÁC -->
+            <section class="section-title">
+                <h2>Thương hiệu nổi bật</h2>
+            </section>
+            <section class="brands">
+                <div class="swiper brandSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/a.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip-1.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/la-roche-posay-logo.png"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/Maybelline-Logo-1915-1990s.png"></div>
+                        </div>
+                        <!-- Duplicate để tạo vòng lặp mượt mà -->
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/a.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip-1.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/la-roche-posay-logo.png"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/Maybelline-Logo-1915-1990s.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+  <!--   <script>
+        fetch("../components/footer.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("footer-placeholder").innerHTML = html;
+            });
+    </script> -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/json/products.js"></script>
+    <script src="/assets/json/slider.js"></script>
+    <script src="/assets/json/main.js"></script>
+    <script>
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const emailInput = e.target.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                alert(`Cảm ơn bạn đã đăng ký bản tin với email: ${emailInput.value}\nChúng tôi sẽ gửi mã giảm giá 10% cho bạn sớm nhất!`);
+                emailInput.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

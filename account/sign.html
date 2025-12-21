@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài khoản - Kyora Beauty</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/Trangchu.css">
+  <link rel="stylesheet" href="/assets/css/sign.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container account-page">
+
+    <!-- 1. KHU VỰC ĐĂNG NHẬP / ĐĂNG KÝ (Hiện khi chưa đăng nhập) -->
+    <div id="auth-section" class="auth-container">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchAuthTab('login')">Đăng nhập</button>
+        <button class="auth-tab" onclick="switchAuthTab('register')">Đăng ký</button>
+      </div>
+
+      <!-- Form Đăng nhập -->
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" id="login-email" required placeholder="Nhập email của bạn">
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="login-password" required placeholder="Nhập mật khẩu">
+          <div style="text-align: right; margin-top: 5px;">
+            <a href="javascript:void(0)" onclick="switchAuthTab('forgot')"
+              style="font-size: 13px; color: #666; text-decoration: none;">Quên mật khẩu?</a>
+          </div>
+        </div>
+        <p id="login-error" class="error-msg"></p>
+        <button type="submit" class="btn-submit">Đăng nhập</button>
+
+        <div style="margin-top: 25px; text-align: center; position: relative;">
+          <p
+            style="margin-bottom: 15px; font-size: 13px; color: #888; background: #fff; display: inline-block; padding: 0 10px; position: relative; z-index: 1;">
+            Hoặc đăng nhập với</p>
+          <div style="border-top: 1px solid #eee; position: absolute; top: 10px; width: 100%; left: 0; z-index: 0;">
+          </div>
+          <div style="display: flex; gap: 10px; justify-content: center;">
+            <button type="button" onclick="handleSocialLogin('facebook')"
+              style="flex: 1; padding: 10px; border: 1px solid #ddd; background: #fff; border-radius: 4px; cursor: pointer; color: #3b5998; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">Facebook</button>
+            <button type="button" onclick="handleSocialLogin('google')"
+              style="flex: 1; padding: 10px; border: 1px solid #ddd; background: #fff; border-radius: 4px; cursor: pointer; color: #db4437; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">Google</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Form Đăng ký -->
+      <form id="register-form" class="hidden" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" id="reg-name" required placeholder="Nhập họ tên đầy đủ">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="reg-email" required placeholder="Nhập email">
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="reg-password" required placeholder="Tạo mật khẩu">
+        </div>
+        <p id="reg-error" class="error-msg"></p>
+        <button type="submit" class="btn-submit">Đăng ký tài khoản</button>
+      </form>
+
+      <!-- Form Quên mật khẩu -->
+      <form id="forgot-form" class="hidden" onsubmit="handleForgot(event)">
+        <h3 style="text-align: center; margin-bottom: 15px; font-size: 18px;">Khôi phục mật khẩu</h3>
+        <p style="text-align: center; font-size: 13px; color: #666; margin-bottom: 20px;">Nhập email của bạn để nhận
+          hướng dẫn đặt lại mật khẩu.</p>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="forgot-email" required placeholder="Nhập email đã đăng ký">
+        </div>
+        <p id="forgot-error" class="error-msg"></p>
+        <button type="submit" class="btn-submit">Gửi yêu cầu</button>
+        <div style="text-align: center; margin-top: 15px;">
+          <a href="javascript:void(0)" onclick="switchAuthTab('login')"
+            style="font-size: 14px; color: #333; text-decoration: none;">&larr; Quay lại đăng nhập</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- 2. KHU VỰC THÔNG TIN CÁ NHÂN (Hiện khi ĐÃ đăng nhập) -->
+    <div id="profile-section" class="profile-container hidden">
+      <h2 class="form-title">Thông tin cá nhân</h2>
+      <form id="profileForm" onsubmit="handleUpdateProfile(event)">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" id="fullname" required>
+        </div>
+        <div class="form-group">
+          <label>Email (Không thể đổi)</label>
+          <input type="email" id="email" disabled style="background: #f5f5f5; color: #888;">
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="tel" id="phone" placeholder="Thêm số điện thoại">
+        </div>
+        <div class="form-group">
+          <label>Giới tính</label>
+          <select id="gender">
+            <option value="">--Chọn--</option>
+            <option value="female">Nữ</option>
+            <option value="male">Nam</option>
+            <option value="other">Khác</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ngày sinh</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+          <label>Tỉnh thành</label>
+          <select id="province">
+            <option value="">Chọn Tỉnh / Thành phố</option>
+            <option value="HN">Hà Nội</option>
+            <option value="HCM">TP. Hồ Chí Minh</option>
+            <option value="BG">Bắc Giang</option>
+            <option value="HY">Hưng Yên</option>
+            <option value="TN">Thái Nguyên</option>
+            <option value="NB">Ninh Bình</option>
+            <option value="PT">Phú Thọ</option>
+            <option value="VP">Vĩnh Phúc</option>
+            <option value="CT">Cần Thơ</option>
+            <option value="DN">Đồng Nai</option>
+          </select>
+        </div>
+        <div class="form-group" style="display: flex; gap: 10px;">
+          <div style="flex: 1;"><label>Quận huyện</label><input type="text" id="district" placeholder="Quận / Huyện">
+          </div>
+          <div style="flex: 1;"><label>Phường xã</label><input type="text" id="ward" placeholder="Phường / Xã"></div>
+        </div>
+        <div class="form-group">
+          <label>Địa chỉ chi tiết</label>
+          <input type="text" id="address-detail" placeholder="Số nhà, tên đường...">
+        </div>
+        <div class="btn-row">
+          <button type="submit" class="btn-submit">Cập nhật</button>
+          <button type="button" onclick="handleLogout()" class="btn-submit btn-logout">Đăng xuất</button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <!-- Script xử lý -->
+  <script src="/assets/json/sign.js"></script>
+  <script src="/assets/json/main.js"></script>
+
+
+</body>
+
+</html>
