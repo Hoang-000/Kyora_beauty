@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyora Beauty — Sản phẩm</title>
-    <link rel="stylesheet" href="/assets/css/Trangchu.css">
-    <link rel="stylesheet" href="/assets/css/Trang_sản_phẩm.css">
+    <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trangchu.css">
+    <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trang_sản_phẩm.css">
 </head>
 
 <body>
     <div id="header-placeholder"></div>
     <script>
-        fetch("/components/header.html")
+        fetch("/Kyora_beauty/components/header.html")
             .then(res => res.text())
             .then(html => {
                 document.getElementById("header-placeholder").innerHTML = html;
@@ -41,7 +41,7 @@
     </section>
 
     <section class="product-banner-section">
-        <img src="/assets/images/Product_Banner.jpg" alt="Tất cả sản phẩm" class="product-banner-image">
+        <img src="/Kyora_beauty/assets/images/Product_Banner.jpg" alt="Tất cả sản phẩm" class="product-banner-image">
     </section>
     <main class="container product-page">
         <aside class="sidebar">
@@ -84,16 +84,16 @@
 
     <div id="footer-placeholder"></div>
     <script>
-        fetch("../components/footer.html")
+        fetch("/Kyora_beauty/components/footer.html")
             .then(res => res.text())
             .then(html => {
                 document.getElementById("footer-placeholder").innerHTML = html;
             });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/assets/json/product.js"></script>
-    <script src="/assets/json/products.js"></script>
-    <script src="/assets/json/slider.js"></script>
+    <script src="/Kyora_beauty/assets/json/product.js"></script>
+    <script src="/Kyora_beauty/assets/json/products.js"></script>
+    <script src="/Kyora_beauty/assets/json/slider.js"></script>
 </body>
 
 </html>

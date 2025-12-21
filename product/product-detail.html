@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chi tiết Sản phẩm — Kyora Beauty</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/Trangchu.css">
-    <link rel="stylesheet" href="/assets/css/Trang_chi_tiết_sản_phẩm.css">
+    <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trangchu.css">
+    <link rel="stylesheet" href="/Kyora_beauty/assets/css/Trang_chi_tiết_sản_phẩm.css">
 </head>
 
 <body>
     <div id="header-placeholder"></div>
     <script>
-        fetch("/components/header.html")
+        fetch("/Kyora_beauty/components/header.html")
             .then(res => res.text())
             .then(html => {
                 document.getElementById("header-placeholder").innerHTML = html;
@@ -106,12 +106,14 @@
             </div>
         </div>
     </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch("/Kyora_beauty/components/footer.html").then(res => res.text()).then(html => { document.getElementById("footer-placeholder").innerHTML = html; });</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/assets/json/products.js"></script>
-    <script src="/assets/json/slider.js"></script>
-    <script src="/assets/json/product-detail.js"></script>
+    <script src="/Kyora_beauty/assets/json/products.js"></script>
+    <script src="/Kyora_beauty/assets/json/slider.js"></script>
+    <script src="/Kyora_beauty/assets/json/product-detail.js"></script>
 </body>
 
 </html>
