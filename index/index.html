@@ -7,6 +7,25 @@
     <title>Kyora Beauty — Trang Chủ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/assets/css/Trangchu.css">
+    <style>
+        .product-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            /* Đảm bảo chiều cao ảnh đồng nhất */
+            object-fit: contain;
+            /* Giữ tỷ lệ ảnh không bị méo */
+            background: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -82,7 +101,7 @@
             <section class="promo">
                 <div class="swiper promoSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="/ssets/images/promo1.jpg"></div>
+                        <div class="swiper-slide"><img src="/assets/images/promo1.jpg"></div>
                         <div class="swiper-slide"><img src="/assets/images/promo2.jpg"></div>
                         <div class="swiper-slide"><img src="/assets/images/promo3.jpg"></div>
                     </div>
@@ -128,10 +147,30 @@
             <section class="best-sellers">
                 <div class="swiper bestSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="/assets/images/bs1.jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/bs2.jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/bs3.jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/bs4.jpg"></div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=25'">
+                            <img src="/assets/images/makeup/maybelline/fit-me-kem-che-khuyet-diem.png">
+                            <h3>Kem Che Khuyết Điểm Fit Me</h3>
+                            <p class="price">178.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=30'">
+                            <img src="/assets/images/makeup/maybelline/phan-ma-fit-me-mono-blush.png">
+                            <h3>Phấn Má Hồng Fit Me</h3>
+                            <p class="price">110.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=31'">
+                            <img src="/assets/images/makeup/maybelline/son-kem-sensational-cushion-mattes.png">
+                            <h3>Son Kem Lì Sensational</h3>
+                            <p class="price">228.000₫</p>
+                        </div>
+                        <div class="swiper-slide product-card"
+                            onclick="window.location.href='/product/product-detail.html?id=21'">
+                            <img src="/assets/images/cham-soc-da-body/cocoon/tay-da-chet-toan-than-ca-phe-dak-lak.png">
+                            <h3>Tẩy Da Chết Cà Phê Đắk Lắk</h3>
+                            <p class="price">400.000₫</p>
+                        </div>
                     </div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -145,26 +184,38 @@
             <section class="brands">
                 <div class="swiper brandSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="/assets/images/OIP.jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/db8c2e203245015.6696e51f31275.jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/OIP (1).jpg"></div>
-                        <div class="swiper-slide"><img src="/assets/images/brand4.png"></div>
-                        <div class="swiper-slide"><img src="/assets/images/brand5.png"></div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/a.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip-1.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/la-roche-posay-logo.png"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/Maybelline-Logo-1915-1990s.png"></div>
+                        </div>
+                        <!-- Duplicate để tạo vòng lặp mượt mà -->
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/a.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/oip-1.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/la-roche-posay-logo.png"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-item"><img src="/assets/images/Maybelline-Logo-1915-1990s.png"></div>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- NEWSLETTER -->
-            <section class="newsletter">
-                <div class="newsletter-inner">
-                    <div>
-                        <h3>Nhận bản tin làm đẹp</h3>
-                        <p>Giảm 10% cho đơn đầu tiên.</p>
-                    </div>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Nhập email">
-                        <button>Đăng ký</button>
-                    </form>
                 </div>
             </section>
 
@@ -185,6 +236,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/assets/json/products.js"></script>
     <script src="/assets/json/slider.js"></script>
+    <script>
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const emailInput = e.target.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                alert(`Cảm ơn bạn đã đăng ký bản tin với email: ${emailInput.value}\nChúng tôi sẽ gửi mã giảm giá 10% cho bạn sớm nhất!`);
+                emailInput.value = '';
+            }
+        }
+    </script>
 </body>
 
 </html>

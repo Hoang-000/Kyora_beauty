@@ -54,10 +54,9 @@ new Swiper('.brandSwiper', {
   loop: true,
   slidesPerView: 5,
   spaceBetween: 30,
-  autoplay: { delay: 2200 },
-  centeredSlides: true,
+  autoplay: { delay: 2500, disableOnInteraction: false },
   breakpoints: {
-    0: { slidesPerView: 2.2 },
+    0: { slidesPerView: 2 },
     600: { slidesPerView: 3 },
     900: { slidesPerView: 4 },
     1200: { slidesPerView: 5 }
@@ -84,26 +83,26 @@ const searchOverlay = document.getElementById("searchOverlay");
 const searchInput = document.getElementById("searchInput");
 
 openSearch.addEventListener("click", () => {
-    searchOverlay.style.display = "flex";
-    setTimeout(() => searchInput.focus(), 100);
+  searchOverlay.style.display = "flex";
+  setTimeout(() => searchInput.focus(), 100);
 });
 
 closeSearch.addEventListener("click", () => {
-    searchOverlay.style.display = "none";
+  searchOverlay.style.display = "none";
 });
 
 // Close on clicking outside
 searchOverlay.addEventListener("click", (e) => {
-    if (e.target === searchOverlay) {
-        searchOverlay.style.display = "none";
-    }
+  if (e.target === searchOverlay) {
+    searchOverlay.style.display = "none";
+  }
 });
 
 // Close on ESC key
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        searchOverlay.style.display = "none";
-    }
+  if (e.key === "Escape") {
+    searchOverlay.style.display = "none";
+  }
 });
 
 
@@ -111,47 +110,47 @@ document.addEventListener("keydown", (e) => {
 const resultsSection = document.getElementById("searchResults");
 const resultsGrid = document.getElementById("resultsGrid");
 
-searchInput.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        const keyword = searchInput.value.trim().toLowerCase();
-        searchOverlay.style.display = "none";
+searchInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const keyword = searchInput.value.trim().toLowerCase();
+    searchOverlay.style.display = "none";
 
-        if (keyword === "") return;
+    if (keyword === "") return;
 
-        const results = products.filter(p =>
-            p.name.toLowerCase().includes(keyword)
-        );
+    const results = products.filter(p =>
+      p.name.toLowerCase().includes(keyword)
+    );
 
-        displayResults(results);
-    }
+    displayResults(results);
+  }
 });
 
 function displayResults(list) {
-    resultsGrid.innerHTML = "";
+  resultsGrid.innerHTML = "";
 
-    if (list.length === 0) {
-        resultsGrid.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
-    } else {
-        list.forEach(product => {
-            resultsGrid.innerHTML += `
+  if (list.length === 0) {
+    resultsGrid.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
+  } else {
+    list.forEach(product => {
+      resultsGrid.innerHTML += `
                 <div class="result-card">
                     <img src="${product.image}">
                     <h3>${product.name}</h3>
                     <p>${product.price}</p>
                 </div>
             `;
-        });
-    }
+    });
+  }
 
-    resultsSection.style.display = "block";
+  resultsSection.style.display = "block";
 }
 
 // STICKY HEADER
 const header = document.getElementById("mainHeader");
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
+  if (window.scrollY > 200) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
 });
