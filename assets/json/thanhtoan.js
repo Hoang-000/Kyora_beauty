@@ -72,16 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
         successModal.classList.add('show');
     }
 
+    // ✅ ĐẶT HÀNG THÀNH CÔNG → QUAY VỀ TRANG CHỦ
     function closeSuccessModal() {
         successModal.classList.remove('show');
         orderForm.reset();
         localStorage.removeItem('cart');
 
-        // Quay về trang sản phẩm
-         setTimeout(() => {
-            window.location.href = `${BASE_URL}/product/product-all.html`;
+        setTimeout(() => {
+            window.location.href = `${BASE_URL}/index.html`;
         }, 2000);
-        
     }
 
     closeAlertBtn.addEventListener('click', closeAlert);
@@ -89,13 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ======================================================
        KIỂM TRA GIỎ HÀNG RỖNG
+       → QUAY VỀ TRANG SẢN PHẨM
     ====================================================== */
 
     if (!currentCart || currentCart.length === 0) {
         showAlert('🛒 Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
 
         setTimeout(() => {
-            window.location.href = `${BASE_URL}/index.html`;
+            window.location.href = `${BASE_URL}/product/product-all.html`;
         }, 2000);
 
         return;
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!getCart() || getCart().length === 0) {
             showAlert('❌ Không có sản phẩm nào trong giỏ hàng.');
             setTimeout(() => {
-                window.location.href = `${BASE_URL}/cart/cart.html`;
+                window.location.href = `${BASE_URL}/product/product-all.html`;
             }, 2000);
             return;
         }
