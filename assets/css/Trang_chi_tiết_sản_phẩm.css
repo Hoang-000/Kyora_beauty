@@ -13,6 +13,7 @@
     height: 80px;
     z-index: 1000;
     background: #fff;
+    font-family: Inter, sans-serif;
 }
 
 body {
