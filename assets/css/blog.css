@@ -17,6 +17,13 @@ body{
 /* =========================
    LAYOUT
 ========================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000
+}
 .blog-wrapper{
   max-width:1200px;
   margin:50px auto;
