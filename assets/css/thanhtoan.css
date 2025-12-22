@@ -236,16 +236,40 @@ textarea { resize: vertical; min-height: 100px; }
     color: var(--text-color);
 }
 .note-transfer { color: var(--secondary-accent-color); font-weight: 600; margin-bottom: 15px; }
-.qr-title { font-size: 1.1em; font-weight: 600; margin-top: 20px; margin-bottom: 15px; color: var(--primary-color); text-align: center; }
+.qr-title { 
+    font-size: 1.1em; 
+    font-weight: 600; 
+    margin: 20px 0 15px; 
+    color: var(--primary-color); 
+    text-align: center; 
+}
+
 .qr-code-area { 
-    text-align: center;
-    padding: 15px;
-    border: 1px dashed var(--secondary-accent-color); /* Viền nét đứt màu hồng */
+    display: flex;                    
+    flex-direction: column;
+    align-items: center;            
+    justify-content: center;        
+    padding: 25px;
+    border: 1px dashed var(--secondary-accent-color);
     border-radius: 8px;
     background-color: #fefcfd;
 }
-.qr-code-area img { max-width: 300px; height: auto; margin-top: 20px; border-radius: 10px; }
-.qr-text { font-family: 'Courier New', monospace; font-size: 0.9em; color: var(--light-text-color); margin-top: 10px; }
+
+.qr-code-area img { 
+    max-width: 300px; 
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+    margin: 0;
+}
+
+.qr-text { 
+    font-family: 'Courier New', monospace; 
+    font-size: 0.9em; 
+    color: var(--light-text-color); 
+    margin-top: 12px;
+    text-align: center;
+}
 
 
 /* --- Danh sách sản phẩm --- */
