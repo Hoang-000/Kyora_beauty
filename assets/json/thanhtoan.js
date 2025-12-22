@@ -84,9 +84,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const successModal = document.getElementById('success-modal');
     const closeSuccessBtn = document.getElementById('close-success-btn');
 
-    function showAlert(message) { /* ... */ }
-    function closeAlert() { /* ... */ }
-    function showSuccessModal(orderId) { /* ... */ }
+// --------------------------------------------------
+// CUSTOM MODAL FUNCTIONS
+// --------------------------------------------------
+
+function showAlert(message) {
+    alertMessage.textContent = message;
+    customAlertModal.classList.add('show');
+}
+
+function closeAlert() {
+    customAlertModal.classList.remove('show');
+}
+
+function showSuccessModal(orderId) {
+    // Gán mã đơn hàng vào modal
+    const orderIdSpan = successModal.querySelector('.order-id-display span');
+    if (orderIdSpan) {
+        orderIdSpan.textContent = orderId;
+    }
+
+    // Hiển thị modal thành công
+    successModal.classList.add('show');
+}
 
     // CẬP NHẬT: Hàm đóng Success Modal để XÓA GIỎ HÀNG
     function closeSuccessModal() {
@@ -143,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
         productListContainer.innerHTML = htmlContent;
         return totalSubtotal;
     }
-
 
     // --- 2. Hàm Tính toán Tổng tiền ---
     function calculateTotal() {
@@ -223,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function () {
         showSuccessModal(orderId);
     }
 
-
     // ------------------------------------------------------------------
     // KHỞI TẠO VÀ GẮN SỰ KIỆN 
     // ------------------------------------------------------------------
@@ -249,3 +267,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Đảm bảo ẩn thông tin chuyển khoản khi mới vào trang (vì mặc định là COD)
     transferInfo.style.display = 'none';
 });
+
