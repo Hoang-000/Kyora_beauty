@@ -68,7 +68,7 @@ function setupActionButtons(product) {
     buyNowBtn.addEventListener('click', () => {
         const quantity = parseInt(quantityInput.value);
         addToCartStorage(product, quantity);
-        window.location.href = '/Kyora_beauty/cart/checkout.html';
+       window.location.href = `${BASE_URL}/cart/checkout.html`;
     });
 
     addToCartBtn.addEventListener('click', () => {
