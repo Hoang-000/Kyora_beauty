@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         successModal.classList.remove('show');
         orderForm.reset();
         localStorage.removeItem('cart'); // Xóa giỏ hàng sau khi đặt thành công
-        window.location.href = 'Kyora_beauty/product/product-all.html';
+       // window.location.href = 'Kyora_beauty/product/product-all.html';
     }
 
     closeAlertBtn.addEventListener('click', closeAlert);
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
         showAlert('🛒 Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
 
         // Sau 2 giây tự động quay về trang chủ
-        setTimeout(() => {
-            window.location.href = '../index.html';
-        }, 2000);
+       // setTimeout(() => {
+          //  window.location.href = '../index.html';
+     //   }, 2000);
 
         // Dừng toàn bộ script
         return;
