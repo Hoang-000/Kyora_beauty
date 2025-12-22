@@ -33,9 +33,9 @@
     background: #fff;
 }
 
-body {
+/* body {
     padding-top: 80px;
-}
+} */
 
 body {
     font-family: var(--font-body);
