@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.removeItem('cart');
 
         // Quay về trang sản phẩm
-        window.location.href = `${BASE_URL}/product/product-all.html`;
+         setTimeout(() => {
+            window.location.href = `${BASE_URL}/product/product-all.html`;
+        }, 2000);
+        
     }
 
     closeAlertBtn.addEventListener('click', closeAlert);
