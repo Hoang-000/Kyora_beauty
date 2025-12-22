@@ -157,3 +157,18 @@ window.addEventListener("scroll", () => {
     header.classList.remove("sticky");
   }
 });
+
+// MOBILE MENU
+document.addEventListener("click", (e) => {
+  const mobileMenuBtn = e.target.closest(".mobile-menu-btn");
+  const closeNavBtn = e.target.closest(".close-nav-btn");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (mobileMenuBtn && mainNav) {
+    mainNav.classList.add("active");
+  }
+
+  if (closeNavBtn && mainNav) {
+    mainNav.classList.remove("active");
+  }
+});
