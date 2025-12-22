@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
 /* Trang_chi_tiết_sản_phẩm.css */
 /* --- LAYOUT CHUNG --- */
 .product-detail-page {
     padding: 60px 0;
-    max-width: 1000px; /* Giới hạn chiều rộng nội dung chính */
+    max-width: 1000px;
+    /* Giới hạn chiều rộng nội dung chính */
 }
+
 .site-header {
     position: fixed;
     top: 0;
@@ -14,6 +17,7 @@
     background: #fff;
     font-family: Times New Roman, sans-serif;
 }
+
 .site-header span {
     font-family: 'Times New Roman', sans-serif !important;
 }
@@ -32,12 +36,13 @@ body {
 /* Khu vực ảnh */
 .image-gallery {
     flex: 1;
-    min-width: 45%; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 40%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     overflow: hidden;
     position: sticky;
-    top: 100px; /* Hiệu ứng dính khi cuộn */
+    top: 100px;
+    /* Hiệu ứng dính khi cuộn */
     height: fit-content;
 }
 
@@ -51,7 +56,7 @@ body {
 /* Khu vực thông tin tóm tắt */
 .product-summary {
     flex: 1;
-    min-width: 55%;
+    min-width: 50%;
 }
 
 .brand-name {
@@ -173,7 +178,7 @@ body {
 
 .detail-title {
     /* Đảm bảo tiêu đề có thể click được */
-    cursor: pointer; 
+    cursor: pointer;
     /* Thêm hiệu ứng cho tiêu đề khi được hover */
     transition: color 0.2s;
 }
@@ -200,24 +205,28 @@ body {
     /* Quan trọng: Ẩn nội dung và chuẩn bị cho transition */
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.3s ease-out; /* Tạo hiệu ứng mượt */
-    
+    transition: max-height 0.4s ease-out, padding 0.3s ease-out;
+    /* Tạo hiệu ứng mượt */
+
     line-height: 1.8;
     color: #444;
-    padding: 0 0 0 20px; /* Thụt lề nhẹ cho nội dung */
+    padding: 0 0 0 20px;
+    /* Thụt lề nhẹ cho nội dung */
 }
 
 /* Khi khối được mở */
 .detail-body.is-open {
     /* Đặt chiều cao lớn hơn nội dung để luôn hiển thị */
-    max-height: 2000px; 
-    padding: 15px 0 0 20px; /* Thêm padding sau khi mở */
+    max-height: 2000px;
+    padding: 15px 0 0 20px;
+    /* Thêm padding sau khi mở */
 }
+
 /* Style đặc biệt cho Thành phần (thường là danh sách dài) */
 /*.ingredient-block .detail-body {
     font-size: 14px;
     white-space: pre-wrap; /* Giữ định dạng xuống dòng và khoảng trắng */
- /*   font-family: monospace; /* Tùy chọn: dùng font cố định cho thành phần hóa học */
+/*   font-family: monospace; /* Tùy chọn: dùng font cố định cho thành phần hóa học */
 /*}
 /* --- Responsive cho mobile --- */
 @media (max-width: 768px) {
@@ -230,7 +239,7 @@ body {
         position: static;
         top: auto;
     }
-    
+
     .action-buttons {
         flex-direction: column;
     }

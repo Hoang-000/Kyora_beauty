@@ -83,7 +83,10 @@ img {
     text-decoration: none;
 }
 
-.icon-btn:hover { transform: translateY(-2px); color: var(--accent); }
+.icon-btn:hover {
+    transform: translateY(-2px);
+    color: var(--accent);
+}
 
 .cart-count {
     position: absolute;
@@ -96,6 +99,13 @@ img {
     border-radius: 50%;
     font-weight: bold;
 }
+
+/* Ẩn nút menu mobile và nút đóng trên desktop */
+.mobile-menu-btn,
+.close-nav-btn {
+    display: none;
+}
+
 /*.header-actions {
     display: flex;
     gap: 10px
@@ -611,13 +621,53 @@ img {
         flex-direction: column;
         align-items: flex-start
     }
+
+    .mobile-menu-btn {
+        display: block;
+        font-size: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--accent-dark);
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 60px 20px;
+        transition: right 0.3s ease;
+        z-index: 1100;
+        display: block;
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .close-nav-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--accent-dark);
+        cursor: pointer;
+    }
 }
 
 @media(max-width:650px) {
-    .main-nav {
-        display: none
-    }
-
     .grid-3 {
         grid-template-columns: 1fr
     }
