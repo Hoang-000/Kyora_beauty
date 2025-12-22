@@ -6,10 +6,11 @@
     padding-top: 40px;
 }
 .site-header {
-    position: fixed;
+    background: #fff;
+    border-bottom: 1px solid #f8dfe4;
+    position: sticky;
     top: 0;
-    left: 0;
-    z-index: 1000
+    z-index: 20
 }
 
 .page-title {
