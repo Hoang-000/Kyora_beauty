@@ -12,10 +12,10 @@
     height: 80px;
     z-index: 1000;
     background: #fff;
-    font-family: Inter, sans-serif;
+    font-family: Times New Roman, sans-serif;
 }
 .site-header span {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Times New Roman', sans-serif !important;
 }
 
 body {
