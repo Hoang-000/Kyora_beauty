@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
         showAlert('🛒 Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
 
         // Sau 2 giây tự động quay về trang chủ
-       // setTimeout(() => {
-          //  window.location.href = '../index.html';
-     //   }, 2000);
+        setTimeout(() => {
+            window.location.href = "/Kyora_beauty/index.html";
+        }, 2000);
 
         // Dừng toàn bộ script
         return;
