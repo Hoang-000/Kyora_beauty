@@ -7,11 +7,16 @@
     max-width: 1000px; /* Giới hạn chiều rộng nội dung chính */
 }
 .site-header {
-    background: #fff;
-    border-bottom: 1px solid #f8dfe4;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 20
+    width: 100%;
+    height: 80px; /* Giả sử header cao 80px */
+    z-index: 1000;
+    background: #fff;
+}
+
+.header-spacer {
+    height: 80px; /* Phải bằng đúng chiều cao của Header */
 }
 
 /* --- PHẦN ẢNH VÀ TÓM TẮT --- */
