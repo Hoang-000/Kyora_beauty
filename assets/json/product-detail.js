@@ -1,5 +1,5 @@
 // Trang_chi_tiết_sản_phẩm.js
-
+const BASE_URL = "/Kyora_beauty"; 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Lấy ID sản phẩm từ URL (Ví dụ: Trang_chi_tiết_sản_phẩm.html?id=1)
     const urlParams = new URLSearchParams(window.location.search);
@@ -65,17 +65,22 @@ function setupActionButtons(product) {
     const addToCartBtn = document.querySelector('.action-buttons .btn-add-cart');
     const quantityInput = document.getElementById('quantity');
 
-    buyNowBtn.addEventListener('click', () => {
-        const quantity = parseInt(quantityInput.value);
-        addToCartStorage(product, quantity);
-       window.location.href = `${BASE_URL}/cart/checkout.html`;
-    });
+   buyNowBtn.addEventListener('click', () => {
+    const quantity = parseInt(quantityInput.value) || 1;
+    addToCartStorage(product, quantity);
 
-    addToCartBtn.addEventListener('click', () => {
-        const quantity = parseInt(quantityInput.value);
-        addToCartStorage(product, quantity);
-        alert(`Đã thêm ${quantity} sản phẩm: ${product.name} vào giỏ hàng!`);
-    });
+    // Mua ngay → trang thanh toán
+    window.location.href = `${BASE_URL}/cart/checkout.html`;
+});
+
+addToCartBtn.addEventListener('click', () => {
+    const quantity = parseInt(quantityInput.value) || 1;
+    addToCartStorage(product, quantity);
+
+    // Thêm giỏ hàng → trang giỏ hàng
+    window.location.href = `${BASE_URL}/cart/cart.html`;
+});
+
 }
 
 /**
