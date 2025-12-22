@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         successModal.classList.remove('show');
         orderForm.reset();
         localStorage.removeItem('cart'); // Xóa giỏ hàng sau khi đặt thành công
-        window.location.href = '../pages/sanpham.html';
+        window.location.href = 'Kyora_beauty/product/product-all.html';
     }
 
     closeAlertBtn.addEventListener('click', closeAlert);
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Sau 2 giây tự động quay về trang giỏ hàng
         setTimeout(() => {
-            window.location.href = '../pages/giohang.html';
+            window.location.href = 'Kyora_beauty/index.html';
         }, 2000);
 
         // Dừng toàn bộ script
