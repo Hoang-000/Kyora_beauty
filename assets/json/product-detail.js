@@ -78,7 +78,7 @@ function setupActionButtons(product) {
     });
 
 }
-}
+
 
 /**
  * Hàm thiết lập hiệu ứng đóng mở (Accordion) cho các khối mô tả.
