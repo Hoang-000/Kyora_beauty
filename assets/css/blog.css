@@ -22,11 +22,12 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+   width: 100%;
     z-index: 1000
 }
 .blog-wrapper{
   max-width:1200px;
-  margin:50px auto;
+  margin:100px auto 50px;
   display:grid;
   grid-template-columns:3fr 1.2fr;
   gap:40px;
