@@ -5,6 +5,12 @@
     gap: 30px;
     padding-top: 40px;
 }
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000
+}
 
 .page-title {
     color: var(--accent-dark);
