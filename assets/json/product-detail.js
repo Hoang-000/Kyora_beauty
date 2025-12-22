@@ -75,7 +75,6 @@ function setupActionButtons(product) {
         const quantity = parseInt(quantityInput.value);
         addToCartStorage(product, quantity);
         alert(`Đã thêm ${quantity} sản phẩm: ${product.name} vào giỏ hàng!`);
-           window.location.href = `${BASE_URL}/cart/cart.html`;
     });
 }
 
