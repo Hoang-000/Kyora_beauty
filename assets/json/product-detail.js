@@ -1,5 +1,5 @@
 // Trang_chi_tiết_sản_phẩm.js
-const BASE_URL = "/Kyora_beauty"; 
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Lấy ID sản phẩm từ URL (Ví dụ: Trang_chi_tiết_sản_phẩm.html?id=1)
     const urlParams = new URLSearchParams(window.location.search);
@@ -70,7 +70,7 @@ function setupActionButtons(product) {
     addToCartStorage(product, quantity);
 
     // Mua ngay → trang thanh toán
-   window.location.href = `${window.location.origin}/Kyora_beauty/cart/checkout.html`;
+   window.location.href = `${BASE_URL}/cart/checkout.html`;
 
 });
 
@@ -79,7 +79,7 @@ addToCartBtn.addEventListener('click', () => {
     addToCartStorage(product, quantity);
 
     // Thêm giỏ hàng → trang giỏ hàng
-   window.location.href = `${window.location.origin}/Kyora_beauty/cart/cart.html`;
+   window.location.href = `${BASE_URL}/cart/cart.html`;
 
 });
 
