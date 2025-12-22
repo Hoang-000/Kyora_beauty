@@ -71,13 +71,12 @@ function setupActionButtons(product) {
         window.location.href = '/Kyora_beauty/cart/checkout.html';
     });
 
-    addToCartBtn.addEventListener('click', () => {
-        const quantity = parseInt(quantityInput.value) || 1;
+ addToCartBtn.addEventListener('click', () => {
+        const quantity = parseInt(quantityInput.value);
         addToCartStorage(product, quantity);
-
-        updateCartCount();
-        window.location.href = '/Kyora_beauty/cart/cart.html';
+        alert(`Đã thêm ${quantity} sản phẩm: ${product.name} vào giỏ hàng!`);
     });
+
 }
 }
 
