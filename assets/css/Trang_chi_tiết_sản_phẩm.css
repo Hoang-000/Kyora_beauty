@@ -1,7 +1,7 @@
 /* Trang_chi_tiết_sản_phẩm.css */
 
 /* --- LAYOUT CHUNG --- */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 .product-detail-page {
     padding: 60px 0;
     max-width: 1000px; /* Giới hạn chiều rộng nội dung chính */
