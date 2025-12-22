@@ -29,14 +29,14 @@ body{
 
 /* body {
     padding-top: 80px;
-}
+} */
 .blog-wrapper{
   max-width:1200px;
   margin:100px auto 50px;
   display:grid;
   grid-template-columns:3fr 1.2fr;
   gap:40px;
-} */
+} 
 
 /* =========================
    BLOG GRID
