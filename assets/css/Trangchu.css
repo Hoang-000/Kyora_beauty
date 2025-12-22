@@ -76,7 +76,7 @@ img {
     background: none;
     border: none;
     font-size: 20px;
-    color: #444;
+    color: var(--accent-dark);
     cursor: pointer;
     position: relative;
     transition: transform 0.2s;
