@@ -6,6 +6,12 @@
     padding: 60px 0;
     max-width: 1000px; /* Giới hạn chiều rộng nội dung chính */
 }
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000
+}
 
 /* --- PHẦN ẢNH VÀ TÓM TẮT --- */
 .product-main-info {
