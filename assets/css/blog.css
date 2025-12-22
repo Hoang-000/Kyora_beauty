@@ -1,39 +1,38 @@
 /* =========================
    RESET + GLOBAL
 ========================= */
-/* Giữ nguyên reset cũ của bạn */
+/*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}*/
 
-/* =========================
-   BODY
-========================= */
 body{
   font-family:'Segoe UI',sans-serif;
   background:linear-gradient(180deg,#fff,#fff5f7);
   color:#444;
-  margin:0;
-  padding-top:80px; /* FIX HEADER CỐ ĐỊNH */
-}
-
-/* =========================
-   HEADER FIXED
-========================= */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 2000;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 /* =========================
    LAYOUT
 ========================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    background: #fff;
+}
+
+body {
+    padding-top: 80px;
+}
 .blog-wrapper{
   max-width:1200px;
-  margin:40px auto 50px; /* FIX: bỏ 100px dư */
+  margin:100px auto 50px;
   display:grid;
   grid-template-columns:3fr 1.2fr;
   gap:40px;
@@ -108,7 +107,7 @@ body{
 ========================= */
 .sidebar{
   position:sticky;
-  top:120px; /* FIX: tránh dính header */
+  top:40px;
   display:flex;
   flex-direction:column;
   gap:30px;
@@ -228,7 +227,7 @@ body{
   display:none;
   justify-content:center;
   align-items:center;
-  z-index:3000; /* FIX cao hơn header */
+  z-index:999;
 }
 
 .post-content{
@@ -241,6 +240,7 @@ body{
   animation:zoomIn .45s ease;
 }
 
+/* ẢNH TRONG BÀI VIẾT – TO HƠN RẤT NHIỀU */
 .post-content img{
   width:100%;
   height:380px;
