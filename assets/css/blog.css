@@ -1,12 +1,12 @@
 /* =========================
    RESET + GLOBAL
 ========================= */
-*{
+/*{
   margin:0;
   padding:0;
   box-sizing:border-box;
   transition:all .35s cubic-bezier(.4,0,.2,1);
-}
+}*/
 
 body{
   font-family:'Segoe UI',sans-serif;
