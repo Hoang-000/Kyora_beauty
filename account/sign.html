@@ -32,6 +32,19 @@
           logo.style.cursor = 'pointer';
           logo.addEventListener('click', () => window.location.href = '/index.html');
         }
+
+        // Xử lý Burger Menu (Thêm mới)
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const closeNavBtn = document.querySelector(".close-nav-btn");
+        const mainNav = document.querySelector(".main-nav");
+
+        if (mobileMenuBtn && mainNav) {
+          mobileMenuBtn.addEventListener("click", () => mainNav.classList.add("active"));
+        }
+
+        if (closeNavBtn && mainNav) {
+          closeNavBtn.addEventListener("click", () => mainNav.classList.remove("active"));
+        }
       });
   </script>
 
@@ -60,6 +73,7 @@
         </div>
         <p id="login-error" class="error-msg"></p>
         <button type="submit" class="btn-submit">Đăng nhập</button>
+
 
         <div style="margin-top: 25px; text-align: center; position: relative;">
           <p

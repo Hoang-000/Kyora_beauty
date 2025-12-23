@@ -180,12 +180,6 @@ body {
     color: var(--accent-dark);
 }
 
-
-/* --- PHẦN CHI TIẾT XẾP CHỒNG (STACKED DETAILS) --- */
-.product-details-stacked {
-    padding: 30px 0;
-}
-
 /* Trang_chi_tiết_sản_phẩm.css */
 
 /* --- CÁC KHỐI CHI TIẾT CÓ THỂ ĐÓNG MỞ (ACCORDION) --- */
